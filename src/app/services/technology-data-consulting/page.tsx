@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import FeaturesSection from "@/components/FeaturesSection";
 import SupportSection from "@/components/SupportSection";
 
 export default function TechnologyDataConsulting() {
@@ -42,7 +41,7 @@ export default function TechnologyDataConsulting() {
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
               Strategic technology consulting to accelerate your digital transformation 
-              and unlock your data's full potential
+              and unlock your data&apos;s full potential
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
@@ -490,7 +489,7 @@ export default function TechnologyDataConsulting() {
             Ready to Transform Your Technology?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Let's discuss how our consulting services can accelerate your digital transformation
+            Let&apos;s discuss how our consulting services can accelerate your digital transformation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">

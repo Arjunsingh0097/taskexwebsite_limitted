@@ -183,12 +183,12 @@ export default function TestimonialsSection() {
                   : `translateX(-${currentSlide * 33.333}%)` 
               }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3">
                   <div className={`${testimonial.bgColor} rounded-xl p-4 sm:p-6 lg:p-8 xl:p-10 h-full shadow-lg mx-1 sm:mx-2 min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] flex flex-col`}>
                     {/* Quote Icon */}
                     <div className={`${testimonial.quoteColor} text-3xl sm:text-4xl font-bold mb-3 sm:mb-4`}>
-                      "
+                      &ldquo;
                     </div>
                     
                     {/* Testimonial Text */}

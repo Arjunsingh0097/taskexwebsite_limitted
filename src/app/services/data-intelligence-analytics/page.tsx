@@ -1113,10 +1113,10 @@ export default function DataIntelligenceAnalytics() {
       <section className="bg-[#1acb97] py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Unlock Your Data's Potential?
+            Ready to Unlock Your Data&apos;s Potential?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our data intelligence services can transform your
+            Let&apos;s discuss how our data intelligence services can transform your
             business and drive measurable results
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

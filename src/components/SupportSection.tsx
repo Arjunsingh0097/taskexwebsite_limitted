@@ -16,8 +16,8 @@ export default function SupportSection() {
 
             {/* Description */}
             <p className="text-lg text-gray-300 leading-relaxed">
-              IT challenges and business complexities don't follow a 9–5
-              schedule—so neither do we. We're your trusted partner across all
+              IT challenges and business complexities don&apos;t follow a 9–5
+              schedule—so neither do we. We&apos;re your trusted partner across all
               industries, ensuring smooth operations and competitive growth.
             </p>
 

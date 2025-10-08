@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import FeaturesSection from "@/components/FeaturesSection";
 import SupportSection from "@/components/SupportSection";
 
 export default function PerformanceMarketing() {
@@ -490,7 +489,7 @@ export default function PerformanceMarketing() {
             Ready to Boost Your Marketing Performance?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Let's discuss how our marketing strategies can drive growth for your business
+            Let&apos;s discuss how our marketing strategies can drive growth for your business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">

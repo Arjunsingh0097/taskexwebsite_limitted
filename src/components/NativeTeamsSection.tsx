@@ -67,7 +67,6 @@ export default function NativeTeamsSection() {
       
       // Calculate scroll progress within this section
       const scrollStart = rect.top;
-      const scrollEnd = rect.bottom;
       const scrollRange = sectionHeight + windowHeight;
       
       // Progress from 0 to 1 as user scrolls through section

@@ -63,8 +63,8 @@ export default function GetInTouch() {
               Get in Touch
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-              Ready to transform your business? Let's discuss how our comprehensive solutions 
-              can help you achieve your goals. We're here to help you succeed.
+              Ready to transform your business? Let&apos;s discuss how our comprehensive solutions 
+              can help you achieve your goals. We&apos;re here to help you succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
@@ -86,11 +86,11 @@ export default function GetInTouch() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                  Let's Start a <span className="text-[#1acb97]">Conversation</span>
+                  Let&apos;s Start a <span className="text-[#1acb97]">Conversation</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Whether you need software development, data analytics, payroll services, 
-                  or digital marketing solutions, we're ready to help you succeed.
+                  or digital marketing solutions, we&apos;re ready to help you succeed.
                 </p>
               </div>
 
@@ -263,7 +263,7 @@ export default function GetInTouch() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h3>
                   <p className="text-gray-600">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
+                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
               )}

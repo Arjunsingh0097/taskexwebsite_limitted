@@ -1,40 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import FeaturesSection from "@/components/FeaturesSection";
 import SupportSection from "@/components/SupportSection";
 
 export default function BusinessProcess() {
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => setIsVisible(true), []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay,
-        duration: 0.9,
-        ease: [0.25, 0.1, 0.25, 1],
-      },
-    }),
+    visible: { opacity: 1, y: 0 },
   };
 
   const fadeIn = {
     hidden: { opacity: 0, scale: 0.98 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay,
-        duration: 0.9,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    }),
+    visible: { opacity: 1, scale: 1 },
   };
 
   return (
@@ -61,6 +41,7 @@ export default function BusinessProcess() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
           >
             Business Process Optimization
@@ -69,7 +50,7 @@ export default function BusinessProcess() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.3}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
             className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
           >
             Streamline operations • Reduce costs • Boost efficiency
@@ -78,7 +59,7 @@ export default function BusinessProcess() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.6}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <button className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
