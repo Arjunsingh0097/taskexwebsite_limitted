@@ -1,0 +1,634 @@
+"use client";
+
+import StatsRow from "./StatsRow";
+import Footer from "./Footer";
+
+export default function AboutSection() {
+  return (
+    <section className="bg-white">
+      {/* White Section */}
+      <div className="py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1acb97] mb-8">
+            Shaping the Future of Work Together
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+            At Native Teams, our journey began with a problem we knew all too
+            well. Driven by a vision to simplify global work, we built a
+            platform that helps businesses and workers thrive. Going beyond EOR,
+            we combine payroll, compliance with financial tools that maximise
+            the value of any work payment!
+          </p>
+        </div>
+
+        {/* Image Gallery Section */}
+        <div className="bg-gray-800 rounded-3xl p-6 shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Image 1 */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Professional team member"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+            {/* Image 2 */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Business professional team member"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+            {/* Image 3 */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Team collaboration and celebration"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+            {/* Image 4 */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Diverse professional team"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Black Section (Our Journey Timeline) */}
+      <div className="bg-black py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1acb97] mb-4">
+              Our Journey
+            </h2>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-600 border-dashed border-gray-600"></div>
+
+            {/* Timeline Items */}
+            <div className="space-y-12">
+              {/* 2020 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-gray-800 rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">
+                      2020
+                    </div>
+                    <p className="text-white text-lg">
+                      Native Teams was born to revolutionise global work
+                      payments, tackling challenges we faced firsthand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2021 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-2 0v-4H3a1 1 0 01-1-1zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-2 0V8H9a1 1 0 01-1-1zM14 3a1 1 0 011-1h2a1 1 0 011 1v13a1 1 0 01-2 0V4h-1a1 1 0 01-1-1z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-gray-800 rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">
+                      2021
+                    </div>
+                    <p className="text-white text-lg">
+                      Launched payroll and compliance services in the Balkans,
+                      then expanded globally. Our growing team offers enhanced
+                      services and support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2022 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-gray-800 rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">
+                      2022
+                    </div>
+                    <p className="text-white text-lg">
+                      Raised €2M seed funding, introduced new features, and
+                      expanded into more global markets with a team of 100+.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2023 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-gray-800 rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">
+                      2023
+                    </div>
+                    <p className="text-white text-lg">
+                      Supported businesses in 85+ countries, grew to 150
+                      employees, and launched key new solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2024 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-[#1acb97] rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">
+                      2024
+                    </div>
+                    <p className="text-white text-lg">
+                      Secured €6.275M investment, expanded to 280+ employees,
+                      and introduced enhanced capabilities and personalised
+                      support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Row */}
+      <StatsRow />
+
+      {/* Video Frame Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Video Frame Container */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Video Element */}
+            <video
+              className="w-full h-full object-cover rounded-3xl"
+              controls
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23f3f4f6'/%3E%3C/svg%3E"
+            >
+              <source src="/videos/office-support-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <button className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 shadow-lg">
+                <svg
+                  className="w-8 h-8 text-gray-800 ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M8 5v10l7-5-7-5z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mission, Vision, and Promise Section */}
+        <div className="mt-20 bg-gray-900 py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Section Title */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1acb97]">
+                Our mission, vision, and promise
+              </h2>
+            </div>
+
+            {/* Three Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1: Our Mission */}
+              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=400&h=300&q=80"
+                    alt="Diverse team smiling"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-[#1acb97] rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Our mission
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-300 leading-relaxed">
+                    Our mission is clear: To provide the most flexible work
+                    payment solution for global teams. Our goal is to empower
+                    your team and strengthen your business, making remote work
+                    stress-free.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Our Vision */}
+              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?fit=crop&w=400&h=300&q=80"
+                    alt="Team collaboration around laptop"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-[#1acb97] rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                        <path
+                          fillRule="evenodd"
+                          d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Our vision
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-300 leading-relaxed">
+                    More than payroll—we support your people! We go the extra
+                    mile with dedicated employee support specialists who guide
+                    your talent through contracts, compliance, and career
+                    growth.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Our Promise */}
+              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?fit=crop&w=400&h=300&q=80"
+                    alt="Handshake agreement"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-[#1acb97] rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Our promise
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-300 leading-relaxed">
+                    We push the boundaries of global work payments, empowering
+                    international employees with secure payments, local
+                    benefits, and financial flexibility—so they can focus on
+                    their best work.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Why We're Different Section */}
+      <div className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Image */}
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=800&h=900&q=80"
+                  alt="Team collaboration looking at laptop"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="space-y-8">
+              {/* Title */}
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  Why we&apos;re{" "}
+                  <span className="text-[#1acb97]">different</span>
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Trusted by industry leaders! We empower thousands of users
+                  worldwide with our expertise and personalised approach.
+                </p>
+              </div>
+
+              {/* Features List */}
+              <div className="space-y-6 border-t border-gray-200 pt-8">
+                {/* Feature 1: Compliance */}
+                <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
+                  <div className="flex-shrink-0">
+                    <svg
+                      className="w-8 h-8 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Compliance while going global
+                    </h3>
+                    <p className="text-gray-600">
+                      We provide compliant solutions for global work payments.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 2: Flexible Solutions */}
+                <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
+                  <div className="flex-shrink-0">
+                    <svg
+                      className="w-8 h-8 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Flexible, scalable solutions
+                    </h3>
+                    <p className="text-gray-600">
+                      Empowering businesses to scale without rigid, expensive
+                      contracts & hidden costs.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 3: Personalised Approach */}
+                <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
+                  <div className="flex-shrink-0">
+                    <svg
+                      className="w-8 h-8 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Highly personalised approach
+                    </h3>
+                    <p className="text-gray-600">
+                      We adapt our services to your needs, providing
+                      personalised and flexible solutions for every client.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 4: Worldwide Reach */}
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <svg
+                      className="w-8 h-8 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Worldwide reach and local expertise
+                    </h3>
+                    <p className="text-gray-600">
+                      Compliant work payments, wherever your business takes you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Meet Our Team Section */}
+      <div className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">
+              THE PEOPLE BEHIND NATIVE TEAMS
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1acb97]">
+              Meet our team
+            </h2>
+          </div>
+
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Team Member 1 - Jack Thorogood */}
+            <div className="text-center">
+              <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=400&h=400&q=80"
+                  alt="Jack Thorogood"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Jack Thorogood
+              </h3>
+              <p className="text-gray-600 text-lg">Founder & CEO</p>
+            </div>
+
+            {/* Team Member 2 - Alex Mitrevska */}
+            <div className="text-center">
+              <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fit=crop&w=400&h=400&q=80"
+                  alt="Alex Mitrevska"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Alex Mitrevska
+              </h3>
+              <p className="text-gray-600 text-lg">Co-Founder & CXO</p>
+            </div>
+
+            {/* Team Member 3 - Nicholas Gitti */}
+            <div className="text-center">
+              <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=400&h=400&q=80"
+                  alt="Nicholas Gitti"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Nicholas Gitti
+              </h3>
+              <p className="text-gray-600 text-lg">CRO</p>
+            </div>
+
+            {/* Team Member 4 - Krasimir Angelov */}
+            <div className="text-center">
+              <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
+                <img
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fit=crop&w=400&h=400&q=80"
+                  alt="Krasimir Angelov"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Krasimir Angelov
+              </h3>
+              <p className="text-gray-600 text-lg">CFO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <Footer />
+    </section>
+  );
+}
