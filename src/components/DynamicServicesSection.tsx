@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function DynamicServicesSection() {
   const services = [
@@ -121,9 +122,9 @@ export default function DynamicServicesSection() {
               </p>
 
               {/* Button */}
-              <button className="bg-[#1acb97] hover:bg-emerald-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 w-fit">
+              <Link href="/get-in-touch" className="bg-[#1acb97] hover:bg-emerald-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 w-fit inline-block">
                 {current.buttonText}
-              </button>
+              </Link>
 
               {/* Service Navigation Dots */}
               <div className="flex space-x-2 mt-8">

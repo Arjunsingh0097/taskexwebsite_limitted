@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const images = [
@@ -64,12 +65,12 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button className="bg-gradient-to-r from-pink-500 to-rose-600 hover:opacity-90 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
+          <Link href="/get-in-touch" className="bg-gradient-to-r from-pink-500 to-rose-600 hover:opacity-90 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
             Book a Demo
-          </button>
-          <button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-lg backdrop-blur-md border border-white/30 transition-all duration-300">
+          </Link>
+          <Link href="/get-in-touch" className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-lg backdrop-blur-md border border-white/30 transition-all duration-300">
             View Docs
-          </button>
+          </Link>
         </div>
       </div>
 

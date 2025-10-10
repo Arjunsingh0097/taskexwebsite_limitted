@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function NativeTeamsSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -157,15 +158,9 @@ export default function NativeTeamsSection() {
               transition: 'opacity 0.3s ease-out, transform 0.3s ease-out'
             }}
           >
-            <button className="bg-emerald-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base lg:text-lg font-semibold">
+            <Link href="/get-in-touch" className="bg-emerald-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base lg:text-lg font-semibold inline-block text-center">
               {currentContent.buttonText}
-            </button>
-            <button
-              onClick={nextImage}
-              className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 self-start sm:self-auto"
-            >
-              <span className="text-lg sm:text-xl">➡</span>
-            </button>
+            </Link>
           </div>
           
           {/* Image Indicators */}
