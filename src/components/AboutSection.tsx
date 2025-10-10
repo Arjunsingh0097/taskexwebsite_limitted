@@ -408,7 +408,7 @@ export default function AboutSection() {
 
                   {/* Description */}
                   <p className="text-gray-300 leading-relaxed">
-                    To be the world's leading business solutions partner, transforming how companies 
+                    To be the world&apos;s leading business solutions partner, transforming how companies 
                     operate through innovative technology, data-driven insights, and exceptional service. 
                     We envision a future where every business thrives with our comprehensive support.
                   </p>
