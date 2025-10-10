@@ -1,77 +1,155 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import StatsRow from "./StatsRow";
 import Footer from "./Footer";
 
 export default function AboutSection() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
-    <section className="bg-white">
-      {/* White Section */}
+    <main className="bg-white text-gray-900">
+      {/* HERO SECTION */}
+      <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1acb97] via-[#16a085] to-gray-900 min-h-[80vh]">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80"
+            alt="About Taskex Background"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </motion.div>
+
+        <div className="relative z-10 text-center px-6">
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
+          >
+            About Taskex
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+            className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
+          >
+            Your Complete Business Solutions Partner • Trusted Worldwide • Driving Innovation
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link href="/get-in-touch" className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
+              Get in Touch
+            </Link>
+            <Link href="/services" className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
+              Our Services
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Parallax Floating Blur */}
+        <motion.div
+          className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-emerald-400/20 blur-3xl"
+          animate={{ y: [0, 40, 0], opacity: [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+        />
+      </section>
+
+      {/* COMPANY OVERVIEW SECTION */}
       <div className="py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1acb97] mb-8">
-            Shaping the Future of Work Together
-          </h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1acb97] mb-8">
+            Empowering Businesses Across All Industries
+          </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
-            At Native Teams, our journey began with a problem we knew all too
-            well. Driven by a vision to simplify global work, we built a
-            platform that helps businesses and workers thrive. Going beyond EOR,
-            we combine payroll, compliance with financial tools that maximise
-            the value of any work payment!
+          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            At Taskex, we are your comprehensive business solutions partner, delivering excellence across software development, 
+            data analytics, payroll services, digital marketing, and more. From contractual tech work to business process 
+            optimization, we provide end-to-end solutions that drive growth and efficiency for companies worldwide.
           </p>
         </div>
 
-        {/* Image Gallery Section */}
-        <div className="bg-gray-800 rounded-3xl p-6 shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Image 1 */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Professional team member"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-
-            {/* Image 2 */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Business professional team member"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-
-            {/* Image 3 */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Team collaboration and celebration"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-
-            {/* Image 4 */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Diverse professional team"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-          </div>
+        {/* Services Overview Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {[
+            {
+              title: "Software Development",
+              description: "Custom software solutions, SaaS platforms, and web applications built with cutting-edge technologies.",
+              image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80",
+              link: "/services/software-development"
+            },
+            {
+              title: "Data Analytics & Intelligence",
+              description: "Transform your data into actionable insights with advanced analytics and business intelligence.",
+              image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
+              link: "/services/data-intelligence-analytics"
+            },
+            {
+              title: "Business Process Services",
+              description: "Streamline operations with process optimization, automation solutions, and workflow improvements.",
+              image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
+              link: "/services/business-process"
+            }
+          ].map((service, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
+                <Link href={service.link} className="inline-flex items-center text-[#1acb97] font-medium hover:text-emerald-600 transition-colors">
+                  Learn More
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* Black Section (Our Journey Timeline) */}
+      {/* Our Journey Timeline */}
       <div className="bg-black py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Title */}
@@ -79,38 +157,49 @@ export default function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#1acb97] mb-4">
               Our Journey
             </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              From startup to industry leader, delivering comprehensive business solutions worldwide
+            </p>
           </div>
 
           {/* Timeline */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-600 border-dashed border-gray-600"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-600"></div>
 
             {/* Timeline Items */}
             <div className="space-y-12">
-              {/* 2020 */}
+              {/* 2019 */}
               <div className="relative flex items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                      clipRule="evenodd"
-                    />
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div className="ml-8">
                   <div className="bg-gray-800 rounded-2xl p-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      2020
-                    </div>
+                    <div className="text-2xl font-bold text-white mb-2">2019</div>
                     <p className="text-white text-lg">
-                      Native Teams was born to revolutionise global work
-                      payments, tackling challenges we faced firsthand.
+                      Taskex was founded with a vision to provide comprehensive business solutions, 
+                      starting with software development and data analytics services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2020 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-2 0v-4H3a1 1 0 01-1-1zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-2 0V8H9a1 1 0 01-1-1zM14 3a1 1 0 011-1h2a1 1 0 011 1v13a1 1 0 01-2 0V4h-1a1 1 0 01-1-1z" />
+                  </svg>
+                </div>
+                <div className="ml-8">
+                  <div className="bg-gray-800 rounded-2xl p-6">
+                    <div className="text-2xl font-bold text-white mb-2">2020</div>
+                    <p className="text-white text-lg">
+                      Expanded into payroll and HR services, helping businesses streamline their 
+                      workforce operations during challenging times.
                     </p>
                   </div>
                 </div>
@@ -119,23 +208,16 @@ export default function AboutSection() {
               {/* 2021 */}
               <div className="relative flex items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-2 0v-4H3a1 1 0 01-1-1zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-2 0V8H9a1 1 0 01-1-1zM14 3a1 1 0 011-1h2a1 1 0 011 1v13a1 1 0 01-2 0V4h-1a1 1 0 01-1-1z" />
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
                 <div className="ml-8">
                   <div className="bg-gray-800 rounded-2xl p-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      2021
-                    </div>
+                    <div className="text-2xl font-bold text-white mb-2">2021</div>
                     <p className="text-white text-lg">
-                      Launched payroll and compliance services in the Balkans,
-                      then expanded globally. Our growing team offers enhanced
-                      services and support.
+                      Launched digital marketing and PPC services, helping businesses boost their 
+                      online presence and achieve measurable growth.
                     </p>
                   </div>
                 </div>
@@ -144,22 +226,16 @@ export default function AboutSection() {
               {/* 2022 */}
               <div className="relative flex items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
                 <div className="ml-8">
                   <div className="bg-gray-800 rounded-2xl p-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      2022
-                    </div>
+                    <div className="text-2xl font-bold text-white mb-2">2022</div>
                     <p className="text-white text-lg">
-                      Raised €2M seed funding, introduced new features, and
-                      expanded into more global markets with a team of 100+.
+                      Introduced business process services and contractual tech work, 
+                      expanding our comprehensive solution portfolio.
                     </p>
                   </div>
                 </div>
@@ -168,22 +244,16 @@ export default function AboutSection() {
               {/* 2023 */}
               <div className="relative flex items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
                 <div className="ml-8">
                   <div className="bg-gray-800 rounded-2xl p-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      2023
-                    </div>
+                    <div className="text-2xl font-bold text-white mb-2">2023</div>
                     <p className="text-white text-lg">
-                      Supported businesses in 85+ countries, grew to 150
-                      employees, and launched key new solutions.
+                      Achieved significant growth with 500+ projects delivered and 
+                      99% client satisfaction across all service lines.
                     </p>
                   </div>
                 </div>
@@ -192,23 +262,16 @@ export default function AboutSection() {
               {/* 2024 */}
               <div className="relative flex items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center z-10">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                   </svg>
                 </div>
                 <div className="ml-8">
                   <div className="bg-[#1acb97] rounded-2xl p-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      2024
-                    </div>
+                    <div className="text-2xl font-bold text-white mb-2">2024</div>
                     <p className="text-white text-lg">
-                      Secured €6.275M investment, expanded to 280+ employees,
-                      and introduced enhanced capabilities and personalised
-                      support.
+                      Today, we serve businesses worldwide with 24/7 support, 
+                      processing over 590,397.49 EUR in payroll and delivering 300% ROI increases.
                     </p>
                   </div>
                 </div>
@@ -300,10 +363,9 @@ export default function AboutSection() {
 
                   {/* Description */}
                   <p className="text-gray-300 leading-relaxed">
-                    Our mission is clear: To provide the most flexible work
-                    payment solution for global teams. Our goal is to empower
-                    your team and strengthen your business, making remote work
-                    stress-free.
+                    To provide comprehensive business solutions that drive growth and efficiency. 
+                    We empower businesses across all industries with cutting-edge technology, 
+                    expert services, and innovative approaches to solve complex challenges.
                   </p>
                 </div>
               </div>
@@ -346,10 +408,9 @@ export default function AboutSection() {
 
                   {/* Description */}
                   <p className="text-gray-300 leading-relaxed">
-                    More than payroll—we support your people! We go the extra
-                    mile with dedicated employee support specialists who guide
-                    your talent through contracts, compliance, and career
-                    growth.
+                    To be the world's leading business solutions partner, transforming how companies 
+                    operate through innovative technology, data-driven insights, and exceptional service. 
+                    We envision a future where every business thrives with our comprehensive support.
                   </p>
                 </div>
               </div>
@@ -391,10 +452,9 @@ export default function AboutSection() {
 
                   {/* Description */}
                   <p className="text-gray-300 leading-relaxed">
-                    We push the boundaries of global work payments, empowering
-                    international employees with secure payments, local
-                    benefits, and financial flexibility—so they can focus on
-                    their best work.
+                    We promise to deliver excellence in every project, maintain the highest standards 
+                    of quality, and provide 24/7 support. Our commitment is to your success—delivering 
+                    measurable results, innovative solutions, and exceptional value in every engagement.
                   </p>
                 </div>
               </div>
@@ -427,14 +487,14 @@ export default function AboutSection() {
                   <span className="text-[#1acb97]">different</span>
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Trusted by industry leaders! We empower thousands of users
-                  worldwide with our expertise and personalised approach.
+                  Trusted by industry leaders! We empower businesses worldwide 
+                  with our comprehensive expertise and personalized approach.
                 </p>
               </div>
 
               {/* Features List */}
               <div className="space-y-6 border-t border-gray-200 pt-8">
-                {/* Feature 1: Compliance */}
+                {/* Feature 1: Comprehensive Solutions */}
                 <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
                   <div className="flex-shrink-0">
                     <svg
@@ -447,21 +507,22 @@ export default function AboutSection() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                       />
                     </svg>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Compliance while going global
+                      Comprehensive business solutions
                     </h3>
                     <p className="text-gray-600">
-                      We provide compliant solutions for global work payments.
+                      From software development to payroll services, we provide 
+                      end-to-end solutions that cover all your business needs.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 2: Flexible Solutions */}
+                {/* Feature 2: Technology Excellence */}
                 <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
                   <div className="flex-shrink-0">
                     <svg
@@ -474,22 +535,22 @@ export default function AboutSection() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                       />
                     </svg>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Flexible, scalable solutions
+                      Cutting-edge technology
                     </h3>
                     <p className="text-gray-600">
-                      Empowering businesses to scale without rigid, expensive
-                      contracts & hidden costs.
+                      We leverage the latest technologies and frameworks to 
+                      deliver innovative solutions that drive business growth.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 3: Personalised Approach */}
+                {/* Feature 3: Data-Driven Approach */}
                 <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
                   <div className="flex-shrink-0">
                     <svg
@@ -502,22 +563,22 @@ export default function AboutSection() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 4a2 2 0 002 2h2a2 2 0 002-2m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v14"
                       />
                     </svg>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Highly personalised approach
+                      Data-driven insights
                     </h3>
                     <p className="text-gray-600">
-                      We adapt our services to your needs, providing
-                      personalised and flexible solutions for every client.
+                      Transform your data into actionable insights with our 
+                      advanced analytics and business intelligence solutions.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 4: Worldwide Reach */}
+                {/* Feature 4: Global Reach */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <svg
@@ -536,10 +597,11 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Worldwide reach and local expertise
+                      Global reach, local expertise
                     </h3>
                     <p className="text-gray-600">
-                      Compliant work payments, wherever your business takes you.
+                      Serving businesses worldwide with 24/7 support and 
+                      localized solutions tailored to your market needs.
                     </p>
                   </div>
                 </div>
@@ -555,73 +617,77 @@ export default function AboutSection() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">
-              THE PEOPLE BEHIND NATIVE TEAMS
+              THE PEOPLE BEHIND TASKEX
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1acb97]">
               Meet our team
             </h2>
+            <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+              Our diverse team of experts brings together decades of experience in technology, 
+              business solutions, and client success to deliver exceptional results.
+            </p>
           </div>
 
           {/* Team Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Team Member 1 - Jack Thorogood */}
+            {/* Team Member 1 */}
             <div className="text-center">
               <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
                 <img
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=400&h=400&q=80"
-                  alt="Jack Thorogood"
+                  alt="Team Member"
                   className="w-full h-80 object-cover"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Jack Thorogood
+                Arjun Singh
               </h3>
               <p className="text-gray-600 text-lg">Founder & CEO</p>
             </div>
 
-            {/* Team Member 2 - Alex Mitrevska */}
+            {/* Team Member 2 */}
             <div className="text-center">
               <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fit=crop&w=400&h=400&q=80"
-                  alt="Alex Mitrevska"
+                  alt="Team Member"
                   className="w-full h-80 object-cover"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Alex Mitrevska
+                Sarah Johnson
               </h3>
-              <p className="text-gray-600 text-lg">Co-Founder & CXO</p>
+              <p className="text-gray-600 text-lg">CTO</p>
             </div>
 
-            {/* Team Member 3 - Nicholas Gitti */}
+            {/* Team Member 3 */}
             <div className="text-center">
               <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
                 <img
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=400&h=400&q=80"
-                  alt="Nicholas Gitti"
+                  alt="Team Member"
                   className="w-full h-80 object-cover"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Nicholas Gitti
+                Michael Chen
               </h3>
-              <p className="text-gray-600 text-lg">CRO</p>
+              <p className="text-gray-600 text-lg">Head of Operations</p>
             </div>
 
-            {/* Team Member 4 - Krasimir Angelov */}
+            {/* Team Member 4 */}
             <div className="text-center">
               <div className="mb-6 rounded-3xl overflow-hidden bg-gray-700">
                 <img
                   src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fit=crop&w=400&h=400&q=80"
-                  alt="Krasimir Angelov"
+                  alt="Team Member"
                   className="w-full h-80 object-cover"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Krasimir Angelov
+                Lisa Rodriguez
               </h3>
-              <p className="text-gray-600 text-lg">CFO</p>
+              <p className="text-gray-600 text-lg">Head of Client Success</p>
             </div>
           </div>
         </div>
@@ -629,6 +695,6 @@ export default function AboutSection() {
 
       {/* Footer */}
       <Footer />
-    </section>
+    </main>
   );
 }
