@@ -102,7 +102,7 @@ export default function EndToEndOutsourcing() {
               Complete Operational Support
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              From setting up your legal and compliance structure to managing hiring, payroll, HR operations, and workplace infrastructure, we act as your extended operations partner. Whether you're a growing startup, a scaling enterprise, or a global company entering a new market, we provide a ready ecosystem for smooth, compliant, and cost-efficient operations.
+              From setting up your legal and compliance structure to managing hiring, payroll, HR operations, and workplace infrastructure, we act as your extended operations partner. Whether you&apos;re a growing startup, a scaling enterprise, or a global company entering a new market, we provide a ready ecosystem for smooth, compliant, and cost-efficient operations.
             </p>
           </motion.div>
 
@@ -127,7 +127,7 @@ export default function EndToEndOutsourcing() {
                   Scalable Solutions
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Our services adapt to your business stage — whether you're a startup, scaling enterprise, or entering new markets.
+                  Our services adapt to your business stage — whether you&apos;re a startup, scaling enterprise, or entering new markets.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg">

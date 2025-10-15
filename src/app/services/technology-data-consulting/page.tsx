@@ -12,10 +12,6 @@ export default function TechnologyDataConsulting() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, scale: 0.98 },
-    visible: { opacity: 1, scale: 1 },
-  };
 
   return (
     <main className="bg-white text-gray-900">
@@ -53,7 +49,7 @@ export default function TechnologyDataConsulting() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
             className="text-xl sm:text-2xl text-white/90 mb-10 max-w-4xl mx-auto"
           >
-            Strategic technology consulting to accelerate your digital transformation and unlock your data's full potential
+            Strategic technology consulting to accelerate your digital transformation and unlock your data&apos;s full potential
           </motion.p>
           <motion.div
             variants={fadeUp}

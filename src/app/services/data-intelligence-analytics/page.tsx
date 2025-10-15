@@ -11,10 +11,6 @@ export default function DataIntelligenceAnalytics() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, scale: 0.98 },
-    visible: { opacity: 1, scale: 1 },
-  };
 
   return (
     <main className="bg-white text-gray-900">
@@ -1168,7 +1164,7 @@ export default function DataIntelligenceAnalytics() {
               Empowering Intelligent Decision-Making
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Our Data Analytics & Insights vertical enables organizations to move beyond hindsight and operate with foresight. Whether you're optimizing operations, enhancing customer experiences, or driving innovation — we help you make decisions backed by data, not assumptions.
+              Our Data Analytics & Insights vertical enables organizations to move beyond hindsight and operate with foresight. Whether you&apos;re optimizing operations, enhancing customer experiences, or driving innovation — we help you make decisions backed by data, not assumptions.
             </p>
           </div>
 

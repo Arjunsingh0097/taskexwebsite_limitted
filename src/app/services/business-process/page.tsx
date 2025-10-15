@@ -62,7 +62,7 @@ export default function BusinessProcess() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
             className="text-lg text-white/80 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-            In today's competitive landscape, operational excellence is the foundation of business success. Our Business Process Services (BPS) help organizations optimize, digitize, and transform their core and support processes — improving efficiency, reducing costs, and enabling teams to focus on strategic priorities.
+            In today&apos;s competitive landscape, operational excellence is the foundation of business success. Our Business Process Services (BPS) help organizations optimize, digitize, and transform their core and support processes — improving efficiency, reducing costs, and enabling teams to focus on strategic priorities.
           </motion.p>
           <motion.div
             variants={fadeUp}

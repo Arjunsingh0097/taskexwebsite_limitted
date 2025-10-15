@@ -127,10 +127,10 @@ export default function SoftwareDevelopment() {
               Empowering Digital Transformation
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              In today's fast-evolving digital landscape, businesses need more than just technology — they need scalable, secure, and future-ready software solutions. Our Software Architecture and Application Development (SAAD) services are designed to turn complex business challenges into seamless digital experiences.
+              In today&apos;s fast-evolving digital landscape, businesses need more than just technology — they need scalable, secure, and future-ready software solutions. Our Software Architecture and Application Development (SAAD) services are designed to turn complex business challenges into seamless digital experiences.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              From conceptualization to deployment and ongoing support, we partner with you at every stage of the software lifecycle. Whether it's building custom enterprise applications, modernizing legacy systems, or developing cloud-native platforms, our approach ensures agility, performance, and long-term scalability.
+              From conceptualization to deployment and ongoing support, we partner with you at every stage of the software lifecycle. Whether it&apos;s building custom enterprise applications, modernizing legacy systems, or developing cloud-native platforms, our approach ensures agility, performance, and long-term scalability.
             </p>
           </motion.div>
         </div>
@@ -625,7 +625,7 @@ export default function SoftwareDevelopment() {
             custom={0.2}
             className="text-xl text-white/90 mb-8"
           >
-            Our SAAD vertical bridges technology and strategy to help organizations innovate with confidence. Whether you're launching a new product, automating workflows, or building next-generation digital ecosystems — we make technology your competitive advantage.
+            Our SAAD vertical bridges technology and strategy to help organizations innovate with confidence. Whether you&apos;re launching a new product, automating workflows, or building next-generation digital ecosystems — we make technology your competitive advantage.
           </motion.p>
           <motion.div
             variants={fadeUp}

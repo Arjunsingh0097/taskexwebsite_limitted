@@ -439,7 +439,7 @@ export default function DigitalMarketing() {
             custom={0.2}
             className="text-xl text-white/90 mb-8"
           >
-            Our Digital Marketing vertical helps brands cut through the noise and connect meaningfully with their audiences. Whether it's building awareness, generating leads, or scaling conversions — we turn your digital presence into a measurable growth engine.
+            Our Digital Marketing vertical helps brands cut through the noise and connect meaningfully with their audiences. Whether it&apos;s building awareness, generating leads, or scaling conversions — we turn your digital presence into a measurable growth engine.
           </motion.p>
           <motion.div
             variants={fadeUp}
