@@ -116,6 +116,12 @@ export default function AboutSection() {
               description: "Streamline operations with process optimization, automation solutions, and workflow improvements.",
               image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
               link: "/services/business-process"
+            },
+            {
+              title: "End-to-End Outsourcing",
+              description: "Complete operational support from legal compliance to HR operations, enabling seamless business scaling.",
+              image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80",
+              link: "/services/end-to-end-outsourcing"
             }
           ].map((service, index) => (
             <motion.div

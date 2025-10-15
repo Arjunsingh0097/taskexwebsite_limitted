@@ -1,58 +1,82 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 
 export default function TechnologyDataConsulting() {
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1acb97] via-[#16a085] to-gray-900 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 opacity-20">
+    <main className="bg-white text-gray-900">
+      {/* HERO SECTION */}
+      <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1acb97] via-[#16a085] to-gray-900 min-h-[80vh]">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
           <Image
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80"
             alt="Technology Consulting Background"
             fill
             className="object-cover"
-            priority
             unoptimized
           />
+        </motion.div>
+
+        <div className="relative z-10 text-center px-6">
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
+          >
+            Technology & Data Consulting Solutions
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+            className="text-xl sm:text-2xl text-white/90 mb-10 max-w-4xl mx-auto"
+          >
+            Strategic technology consulting to accelerate your digital transformation and unlock your data's full potential
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
+              Schedule a Call
+            </button>
+            <button className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
+              Get in Touch
+            </button>
+          </motion.div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div
-            className={`text-center text-white transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Technology & Data Consulting Solutions
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-              Strategic technology consulting to accelerate your digital transformation 
-              and unlock your data&apos;s full potential
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button>
-              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-[#1acb97] transition-all duration-300">
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Parallax Floating Blur */}
+        <motion.div
+          className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-emerald-400/20 blur-3xl"
+          animate={{ y: [0, 40, 0], opacity: [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+        />
       </section>
 
       {/* Services Overview Section */}

@@ -53,6 +53,7 @@ export default function Footer() {
               <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Payroll & HR</a></li>
               <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Digital Marketing</a></li>
               <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">PPC Campaigns</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">End-to-End Outsourcing</a></li>
             </ul>
           </div>
 

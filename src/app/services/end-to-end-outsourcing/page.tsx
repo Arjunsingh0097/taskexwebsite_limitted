@@ -5,7 +5,7 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 
-export default function DigitalMarketing() {
+export default function EndToEndOutsourcing() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -28,8 +28,8 @@ export default function DigitalMarketing() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80"
-            alt="Digital Marketing Background"
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80"
+            alt="End-to-End Outsourcing Services Background"
             fill
             className="object-cover"
             unoptimized
@@ -44,7 +44,7 @@ export default function DigitalMarketing() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
           >
-            Digital Marketing
+            End-to-End Outsourcing Services
           </motion.h1>
           <motion.p
             variants={fadeUp}
@@ -53,7 +53,7 @@ export default function DigitalMarketing() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
             className="text-xl sm:text-2xl text-white/90 mb-4 max-w-4xl mx-auto"
           >
-            Connecting Brands with Audiences That Matter
+            Your Business. Fully Supported. Seamlessly Managed.
           </motion.p>
           <motion.p
             variants={fadeUp}
@@ -62,7 +62,7 @@ export default function DigitalMarketing() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
             className="text-lg text-white/80 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-            In a digital-first world, visibility, engagement, and conversion define success. Our Digital Marketing services help businesses build strong online presence, attract the right audience, and drive measurable growth through data-led strategies and creative storytelling.
+            Building and running an organization takes more than a great idea — it requires reliable operations, compliant frameworks, and efficient management. Our End-to-End Outsourcing Services are designed to help businesses focus on what they do best while we take care of everything else.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -99,10 +99,10 @@ export default function DigitalMarketing() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Strategic Marketing Excellence
+              Complete Operational Support
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We blend strategy, design, technology, and analytics to craft campaigns that not only capture attention but also deliver results. From awareness to conversion and retention, we help you engage your customers across every stage of their journey.
+              From setting up your legal and compliance structure to managing hiring, payroll, HR operations, and workplace infrastructure, we act as your extended operations partner. Whether you're a growing startup, a scaling enterprise, or a global company entering a new market, we provide a ready ecosystem for smooth, compliant, and cost-efficient operations.
             </p>
           </motion.div>
 
@@ -116,26 +116,26 @@ export default function DigitalMarketing() {
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Data-Driven Strategy
+                  Comprehensive Coverage
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Every campaign is backed by comprehensive analytics and insights to ensure maximum ROI and sustainable growth.
+                  From legal compliance to HR operations, we handle every aspect of your business infrastructure so you can focus on growth.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Creative Storytelling
+                  Scalable Solutions
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We craft compelling narratives that resonate with your audience and drive meaningful engagement across all touchpoints.
+                  Our services adapt to your business stage — whether you're a startup, scaling enterprise, or entering new markets.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Multi-Channel Approach
+                  Single-Window Management
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Integrated campaigns across search, social, email, and content marketing for comprehensive brand presence.
+                  One trusted partner managing all operational functions with transparent governance and service-level accountability.
                 </p>
               </div>
             </motion.div>
@@ -149,8 +149,8 @@ export default function DigitalMarketing() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
-                  alt="Digital Marketing Strategy"
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80"
+                  alt="End-to-End Outsourcing Services"
                   width={600}
                   height={400}
                   className="object-cover w-full h-full"
@@ -176,15 +176,51 @@ export default function DigitalMarketing() {
             Our Capabilities
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive digital marketing solutions designed to drive growth and engagement
+            Comprehensive outsourcing solutions designed to support your entire business ecosystem
           </p>
         </motion.div>
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
           {[
             {
-              title: "Digital Strategy & Consulting",
-              description: "Develop tailored marketing roadmaps that align with your business goals and customer expectations.",
+              title: "Legal & Compliance Management",
+              description: "Establish and manage your organization within a robust legal and regulatory framework — ensuring full compliance with local laws, policies, and industry standards.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              ),
+            },
+            {
+              title: "Talent Acquisition & Hiring Support",
+              description: "Access recruitment expertise to attract, assess, and onboard the right talent aligned with your business goals and culture.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              ),
+            },
+            {
+              title: "Payroll & HR Operations",
+              description: "Streamline employee lifecycle management, from payroll processing and benefits administration to HR policies and employee engagement.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              ),
+            },
+            {
+              title: "HR Business Partnering (HRBP)",
+              description: "Strategic HR support to align people strategy with business objectives — driving productivity, retention, and organizational health.",
               icon: (
                 <path
                   strokeLinecap="round"
@@ -195,74 +231,26 @@ export default function DigitalMarketing() {
               ),
             },
             {
-              title: "Search Engine Optimization (SEO)",
-              description: "Improve visibility and organic reach through smart keyword strategy, technical optimization, and high-quality content.",
+              title: "Infrastructure Management",
+              description: "End-to-end support for office space setup, facilities management, and IT infrastructure — from hardware and networking to secure digital environments.",
               icon: (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                 />
               ),
             },
             {
-              title: "Performance Marketing (SEM & Paid Campaigns)",
-              description: "Maximize ROI with data-driven campaigns across Google Ads, Meta, LinkedIn, and other platforms.",
+              title: "Single-Window Operations Management",
+              description: "A unified service model that ensures seamless coordination across all operational functions, backed by transparent governance and service-level accountability.",
               icon: (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                />
-              ),
-            },
-            {
-              title: "Social Media Marketing & Management",
-              description: "Build brand awareness and engagement with impactful storytelling and consistent, audience-relevant content.",
-              icon: (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-9 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M7 4a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"
-                />
-              ),
-            },
-            {
-              title: "Content Marketing",
-              description: "Create and distribute valuable, targeted content that builds authority, trust, and loyalty.",
-              icon: (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              ),
-            },
-            {
-              title: "Email & CRM Campaigns",
-              description: "Personalize communication to nurture leads, retain customers, and drive repeat business.",
-              icon: (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              ),
-            },
-            {
-              title: "Analytics & Conversion Optimization",
-              description: "Measure performance, track KPIs, and optimize campaigns for better engagement and conversions.",
-              icon: (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 4a2 2 0 002 2h2a2 2 0 002-2m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v14"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               ),
             },
@@ -310,7 +298,7 @@ export default function DigitalMarketing() {
             Why Choose Us
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We deliver exceptional digital marketing results through proven strategies and innovative approaches
+            We deliver exceptional outsourcing results through proven expertise and comprehensive support
           </p>
         </motion.div>
 
@@ -318,8 +306,8 @@ export default function DigitalMarketing() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Integrated Approach",
-                description: "Strategy, creativity, and analytics under one roof",
+                title: "One Partner, Complete Support",
+                description: "Simplify operations with a single, trusted outsourcing partner",
                 icon: (
                   <path
                     strokeLinecap="round"
@@ -330,50 +318,50 @@ export default function DigitalMarketing() {
                 ),
               },
               {
-                title: "Data-Driven Execution",
-                description: "Every decision backed by measurable insights",
+                title: "Compliance Confidence",
+                description: "Navigate legal and regulatory complexities with ease",
                 icon: (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 4a2 2 0 002 2h2a2 2 0 002-2m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v14"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 ),
               },
               {
-                title: "Cross-Channel Expertise",
-                description: "Consistent brand storytelling across platforms",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-9 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M7 4a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"
-                  />
-                ),
-              },
-              {
-                title: "Performance Focus",
-                description: "Clear metrics, transparent reporting, real results",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                  />
-                ),
-              },
-              {
-                title: "Scalable Solutions",
-                description: "Designed to grow with your business needs",
+                title: "Scalable & Flexible",
+                description: "Tailored models that adapt as your business grows",
                 icon: (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                ),
+              },
+              {
+                title: "Cost & Efficiency Advantage",
+                description: "Reduce overhead while maintaining operational excellence",
+                icon: (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
+                ),
+              },
+              {
+                title: "Focus on Core Business",
+                description: "We handle the backend so you can focus on growth and innovation",
+                icon: (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                   />
                 ),
               },
@@ -430,7 +418,7 @@ export default function DigitalMarketing() {
             whileInView="visible"
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Driving Digital Impact That Matters
+            Enabling Businesses to Scale Without Boundaries
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -439,7 +427,7 @@ export default function DigitalMarketing() {
             custom={0.2}
             className="text-xl text-white/90 mb-8"
           >
-            Our Digital Marketing vertical helps brands cut through the noise and connect meaningfully with their audiences. Whether it's building awareness, generating leads, or scaling conversions — we turn your digital presence into a measurable growth engine.
+            Our End-to-End Outsourcing Services vertical empowers organizations to operate seamlessly and scale confidently. With our integrated approach, you gain a ready operational backbone — enabling faster setup, stronger compliance, and smoother growth from day one.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -449,15 +437,16 @@ export default function DigitalMarketing() {
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <button className="bg-white text-[#1acb97] font-semibold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-500">
-              Start Your Campaign
+              Start Your Journey
             </button>
             <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
-              Get Marketing Strategy
+              Get Consultation
             </button>
           </motion.div>
         </div>
       </section>
 
+      {/* Footer */}
       <Footer />
     </main>
   );

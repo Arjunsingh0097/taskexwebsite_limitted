@@ -103,6 +103,13 @@ export default function Navigation() {
                         >
                           Software Development
                         </Link>
+                        <Link
+                          href="/services/end-to-end-outsourcing"
+                          className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          End-to-End Outsourcing Services
+                        </Link>
                       </div>
                     )}
               </div>
@@ -186,6 +193,13 @@ export default function Navigation() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Software Development
+                  </Link>
+                  <Link
+                    href="/services/end-to-end-outsourcing"
+                    className="text-gray-700 hover:text-[#1acb97] block py-2 text-sm font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    End-to-End Outsourcing Services
                   </Link>
                 </div>
               </div>

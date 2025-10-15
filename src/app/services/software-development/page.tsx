@@ -44,7 +44,7 @@ export default function SoftwareDevelopment() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
           >
-            Software Development
+            Software Development (SAAD) Services
           </motion.h1>
           <motion.p
             variants={fadeUp}
@@ -53,7 +53,7 @@ export default function SoftwareDevelopment() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
             className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
           >
-            Build scalable solutions • Modern technologies • Drive innovation
+            Transforming Ideas into Intelligent Digital Solutions
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -113,6 +113,29 @@ export default function SoftwareDevelopment() {
         </div>
       </section>
 
+      {/* INTRODUCTION SECTION */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Empowering Digital Transformation
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              In today's fast-evolving digital landscape, businesses need more than just technology — they need scalable, secure, and future-ready software solutions. Our Software Architecture and Application Development (SAAD) services are designed to turn complex business challenges into seamless digital experiences.
+            </p>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              From conceptualization to deployment and ongoing support, we partner with you at every stage of the software lifecycle. Whether it's building custom enterprise applications, modernizing legacy systems, or developing cloud-native platforms, our approach ensures agility, performance, and long-term scalability.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* SERVICES SECTION */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         <motion.div
@@ -122,53 +145,73 @@ export default function SoftwareDevelopment() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Development Services
+            Our Capabilities
           </h2>
           <p className="text-lg text-gray-600">
-            Cutting-edge solutions. Proven expertise. Delivered on time.
+            Comprehensive SAAD services for modern digital solutions
           </p>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
           {[
             {
-              title: "Web Applications",
+              title: "Software Architecture & Design",
               img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
               points: [
-                "Custom web applications",
-                "Modern frameworks (React, Next.js, Vue)",
-                "Responsive design",
-                "API integration & development",
+                "Robust, modular architectures",
+                "Scalable system foundations",
+                "Performance optimization",
+                "Security-first design principles",
               ],
             },
             {
-              title: "Mobile Applications",
+              title: "Custom Application Development",
               img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80",
               points: [
-                "Native iOS & Android apps",
-                "Cross-platform solutions (React Native, Flutter)",
-                "App Store optimization",
-                "Push notifications & analytics",
+                "Web and mobile applications",
+                "Complex enterprise platforms",
+                "Tailored business solutions",
+                "Modern framework implementation",
               ],
             },
             {
-              title: "SaaS Platforms",
+              title: "Cloud & Integration Services",
               img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
               points: [
-                "Multi-tenant architecture",
-                "Cloud deployment & scaling",
-                "User management & billing",
-                "API-first design",
+                "Cloud-native platform development",
+                "System integration & connectivity",
+                "Data flow optimization",
+                "Unified business operations",
               ],
             },
             {
-              title: "Enterprise Software",
+              title: "Legacy Modernization",
               img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80",
               points: [
-                "Custom business solutions",
-                "Legacy system modernization",
-                "Integration services",
-                "Data migration & management",
+                "Outdated system transformation",
+                "Agile platform development",
+                "Performance improvements",
+                "Enhanced usability & maintainability",
+              ],
+            },
+            {
+              title: "Quality Engineering & Testing",
+              img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80",
+              points: [
+                "Comprehensive testing strategies",
+                "Reliability & performance assurance",
+                "Cross-environment validation",
+                "Flawless user experience delivery",
+              ],
+            },
+            {
+              title: "Maintenance & Continuous Improvement",
+              img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80",
+              points: [
+                "Ongoing optimization support",
+                "Business evolution alignment",
+                "Continuous monitoring",
+                "Proactive system updates",
               ],
             },
           ].map((card, i) => (
@@ -331,6 +374,106 @@ export default function SoftwareDevelopment() {
         />
       </section>
 
+      {/* WHY CHOOSE US SECTION */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Why Choose Us
+          </h2>
+          <p className="text-lg text-gray-600">
+            Your trusted partner in digital transformation
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "End-to-End Expertise",
+                description: "From idea to implementation and beyond",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Agile Delivery",
+                description: "Rapid, flexible development cycles",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Scalable Solutions",
+                description: "Designed to grow with your business",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "User-Centric Approach",
+                description: "Seamless functionality and engaging experiences",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Future-Ready Tech",
+                description: "Modern frameworks, cloud platforms, and DevOps best practices",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Competitive Advantage",
+                description: "Technology that drives business success",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                ),
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i * 0.2}
+                className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className="w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="text-white">
+                    {item.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -473,7 +616,7 @@ export default function SoftwareDevelopment() {
             whileInView="visible"
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Ready to Build Your Next Software Solution?
+            Ready to Transform Your Digital Vision?
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -482,8 +625,7 @@ export default function SoftwareDevelopment() {
             custom={0.2}
             className="text-xl text-white/90 mb-8"
           >
-            Transform your ideas into powerful software solutions with our
-            expert development team.
+            Our SAAD vertical bridges technology and strategy to help organizations innovate with confidence. Whether you're launching a new product, automating workflows, or building next-generation digital ecosystems — we make technology your competitive advantage.
           </motion.p>
           <motion.div
             variants={fadeUp}

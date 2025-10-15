@@ -1,192 +1,106 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
 export default function DataIntelligenceAnalytics() {
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1acb97] via-[#16a085] to-gray-900 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 opacity-20">
+    <main className="bg-white text-gray-900">
+      {/* HERO SECTION */}
+      <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1acb97] via-[#16a085] to-gray-900 min-h-[80vh]">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80"
             alt="Data Analytics Background"
             fill
             className="object-cover"
+            unoptimized
           />
+        </motion.div>
+
+        <div className="relative z-10 text-center px-6">
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
+          >
+            Data Analytics & Insights
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+            className="text-xl sm:text-2xl text-white/90 mb-4 max-w-4xl mx-auto"
+          >
+            Turning Data into Decisions. Decisions into Growth.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
+            className="text-lg text-white/80 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            In a world driven by information, data is one of your most powerful assets — but only when transformed into actionable insights. Our Data Analytics & Insights services help organizations unlock the full potential of their data, enabling smarter decisions, optimized performance, and sustained growth.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
+              Schedule a Call
+            </button>
+            <button className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
+              Get in Touch
+            </button>
+          </motion.div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div
-            className={`text-center text-white transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Data Intelligence & Analytics Services
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-              Transform your data into actionable insights that drive business
-              growth and competitive advantage
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button>
-              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-[#1acb97] transition-all duration-300">
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Parallax Floating Blur */}
+        <motion.div
+          className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-emerald-400/20 blur-3xl"
+          animate={{ y: [0, 40, 0], opacity: [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+        />
       </section>
 
-      {/* Services Overview Section */}
+      {/* Our Capabilities Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Analytics Solutions
+              Our Capabilities
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive data intelligence services designed to unlock the
-              full potential of your business data
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+              We combine advanced analytics, machine learning, and business intelligence to convert complex datasets into clear, meaningful narratives that drive real business outcomes. From strategy to implementation, we help you harness data to anticipate trends, enhance customer experiences, and improve operational efficiency.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Business Intelligence */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 4a2 2 0 002 2h2a2 2 0 002-2m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v14"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Business Intelligence
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Interactive dashboards & KPI monitoring
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Real-time reporting & analytics
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Custom data models & ETL processes
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Executive & operational dashboards
-                </li>
-              </ul>
-            </div>
-
-            {/* Predictive Analytics */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Predictive Analytics
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Customer behavior prediction
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Sales forecasting & trend analysis
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Risk assessment & fraud detection
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Demand planning & inventory optimization
-                </li>
-              </ul>
-            </div>
-
-            {/* Data Visualization */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Data Visualization
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Interactive charts & graphs
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Geospatial data mapping
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Real-time data streaming displays
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Mobile-responsive dashboards
-                </li>
-              </ul>
-            </div>
-
-            {/* Big Data Analytics */}
+            {/* Data Strategy & Architecture */}
             <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <svg
@@ -204,29 +118,114 @@ export default function DataIntelligenceAnalytics() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Big Data Analytics
+                Data Strategy & Architecture
               </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Large-scale data processing
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Real-time data streaming
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Data lake & warehouse solutions
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Scalable cloud infrastructure
-                </li>
-              </ul>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Build a strong data foundation with well-defined architecture, governance frameworks, and secure data pipelines that ensure integrity, accessibility, and scalability.
+              </p>
             </div>
 
-            {/* Machine Learning */}
+            {/* Business Intelligence & Visualization */}
+            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                <svg
+                  className="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 4a2 2 0 002 2h2a2 2 0 002-2m-6 0V5a2 2 0 012-2h2a2 2 0 012 2v14"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                Business Intelligence & Visualization
+              </h3>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Transform raw data into intuitive dashboards and reports that empower your teams with real-time, actionable insights.
+              </p>
+            </div>
+
+            {/* Advanced Analytics & Predictive Modelling */}
+            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                <svg
+                  className="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                Advanced Analytics & Predictive Modelling
+              </h3>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Apply statistical models and machine learning algorithms to uncover hidden patterns, forecast future trends, and guide proactive decision-making.
+              </p>
+            </div>
+
+            {/* Data Integration & Management */}
+            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                <svg
+                  className="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                Data Integration & Management
+              </h3>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Seamlessly consolidate data from multiple sources — internal and external — into unified, high-quality datasets for consistent and accurate analysis.
+              </p>
+            </div>
+
+            {/* Performance & Operational Analytics */}
+            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                <svg
+                  className="w-10 h-10 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                Performance & Operational Analytics
+              </h3>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Identify inefficiencies, track KPIs, and optimize processes through tailored analytics frameworks that drive measurable improvements.
+              </p>
+            </div>
+
+            {/* AI-Powered Insights */}
             <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <svg
@@ -244,66 +243,118 @@ export default function DataIntelligenceAnalytics() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Machine Learning
+                AI-Powered Insights
               </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Automated model training
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Natural language processing
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Computer vision & image analysis
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Recommendation engines
-                </li>
-              </ul>
+              <p className="text-gray-300 text-center text-sm leading-relaxed">
+                Leverage artificial intelligence and automation to scale analytics, uncover deeper insights, and create adaptive intelligence systems that evolve with your business.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Data Governance */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose Us
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Partner with us to transform your data into competitive advantage
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* End-to-End Expertise */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Data Governance
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                End-to-End Expertise
               </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Data quality & validation
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Privacy & compliance management
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Data lineage & cataloging
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Security & access controls
-                </li>
-              </ul>
+              <p className="text-gray-600 leading-relaxed">
+                From data collection to strategic insight delivery, we provide comprehensive analytics solutions that cover every aspect of your data journey.
+              </p>
+            </div>
+
+            {/* Industry-Focused Solutions */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Industry-Focused Solutions
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Customized analytics for domain-specific challenges, leveraging deep industry knowledge to deliver relevant and actionable insights.
+              </p>
+            </div>
+
+            {/* Cutting-Edge Tools */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Cutting-Edge Tools
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Leveraging leading BI and AI technologies to ensure your analytics platform is built with the most advanced and reliable tools available.
+              </p>
+            </div>
+
+            {/* Data-Driven Culture */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Data-Driven Culture
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Helping organizations evolve into insight-led enterprises with training, change management, and cultural transformation support.
+              </p>
+            </div>
+
+            {/* Scalable & Secure */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Scalable & Secure
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Solutions designed to grow with your data and business needs, with enterprise-grade security and compliance built-in from day one.
+              </p>
+            </div>
+
+            {/* Proven Results */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Proven Results
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Track record of delivering measurable business impact through data-driven insights that drive revenue growth and operational efficiency.
+              </p>
             </div>
           </div>
         </div>
@@ -1105,6 +1156,67 @@ export default function DataIntelligenceAnalytics() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Empowering Intelligent Decision-Making Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Empowering Intelligent Decision-Making
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Our Data Analytics & Insights vertical enables organizations to move beyond hindsight and operate with foresight. Whether you're optimizing operations, enhancing customer experiences, or driving innovation — we help you make decisions backed by data, not assumptions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Optimizing Operations */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Optimizing Operations
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Streamline processes, reduce costs, and improve efficiency through data-driven insights that identify bottlenecks and optimization opportunities.
+              </p>
+            </div>
+
+            {/* Enhancing Customer Experiences */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Enhancing Customer Experiences
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Understand customer behavior, predict needs, and deliver personalized experiences that drive satisfaction and loyalty.
+              </p>
+            </div>
+
+            {/* Driving Innovation */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-[#1acb97] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Driving Innovation
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Discover new opportunities, identify emerging trends, and create innovative solutions that position your business for future success.
+              </p>
+            </div>
           </div>
         </div>
       </section>
