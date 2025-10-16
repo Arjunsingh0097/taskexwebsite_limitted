@@ -70,7 +70,7 @@ export default function WhyChooseUsSection() {
           >
             <div className="relative w-full max-w-[800px] rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
               <Image
-                src="/images/beautifulimage.png.jpg"
+                src="/images/beautifulimage.jpg"
                 alt="Taskex Team Collaboration"
                 width={800}
                 height={450}
