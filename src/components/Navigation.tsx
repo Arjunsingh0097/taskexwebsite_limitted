@@ -73,7 +73,7 @@ export default function Navigation() {
                           className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150"
                           onClick={() => setIsServicesOpen(false)}
                         >
-                          Data Intelligence and Analytics Services
+                          Data Analytics & Insights
                         </Link>
                         <Link
                           href="/services/technology-data-consulting"
@@ -164,7 +164,7 @@ export default function Navigation() {
                     className="text-gray-700 hover:text-[#1acb97] block py-2 text-sm font-medium transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Data Intelligence and Analytics Services
+                    Data Analytics & Insights
                   </Link>
                   <Link
                     href="/services/technology-data-consulting"
