@@ -18,34 +18,39 @@ export default function NativeTeamsSection() {
 
   const contentData = [
     {
-      title: "Your Business",
-      subtitle: "Solutions Partner",
-      description: "From software development to payroll services, we provide comprehensive solutions that drive growth and efficiency.",
-      buttonText: "Get Started"
-    },
-    {
       title: "Software Development",
-      subtitle: "& SaaS Solutions",
-      description: "Custom software solutions, SaaS platforms, and web applications built with cutting-edge technologies to drive your business forward.",
-      buttonText: "Start Your Project"
+      subtitle: "(SAAD) Services",
+      description: "Transforming Ideas into Intelligent Digital Solutions. Custom software solutions, SaaS platforms, and web applications built with cutting-edge technologies.",
+      buttonText: "Start Your Project",
+      link: "/services/software-development"
     },
     {
       title: "Data Analytics",
-      subtitle: "& Business Intelligence",
-      description: "Transform your data into actionable insights with advanced analytics, business intelligence, and data-driven strategies for growth.",
-      buttonText: "Analyze Now"
-    },
-    {
-      title: "Payroll & HR",
-      subtitle: "Services Made Easy",
-      description: "Comprehensive payroll management, HR solutions, and compliance services that streamline your workforce operations.",
-      buttonText: "Optimize HR"
+      subtitle: "& Insights",
+      description: "Turning Data into Decisions. Decisions into Growth. Unlock the full potential of your data with advanced analytics and business intelligence.",
+      buttonText: "Analyze Now",
+      link: "/services/data-intelligence-analytics"
     },
     {
       title: "Digital Marketing",
-      subtitle: "& PPC Campaigns",
-      description: "Boost your online presence with data-driven marketing strategies, targeted PPC campaigns, and SEO optimization.",
-      buttonText: "Boost Growth"
+      subtitle: "Services",
+      description: "Connecting Brands with Audiences That Matter. Build strong online presence and drive measurable growth through data-led strategies.",
+      buttonText: "Boost Growth",
+      link: "/services/performance-marketing"
+    },
+    {
+      title: "Business Strategy",
+      subtitle: "Consulting",
+      description: "Comprehensive business strategy consulting designed to drive growth, optimize operations, and create sustainable competitive advantages.",
+      buttonText: "Plan Strategy",
+      link: "/services/business-strategy"
+    },
+    {
+      title: "End-to-End",
+      subtitle: "Outsourcing Services",
+      description: "Your Business. Fully Supported. Seamlessly Managed. Focus on what you do best while we take care of everything else.",
+      buttonText: "Get Started",
+      link: "/services/end-to-end-outsourcing-services"
     }
   ];
 
@@ -158,7 +163,7 @@ export default function NativeTeamsSection() {
               transition: 'opacity 0.3s ease-out, transform 0.3s ease-out'
             }}
           >
-            <Link href="/get-in-touch" className="bg-emerald-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base lg:text-lg font-semibold inline-block text-center">
+            <Link href={currentContent.link} className="bg-emerald-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base lg:text-lg font-semibold inline-block text-center">
               {currentContent.buttonText}
             </Link>
           </div>
