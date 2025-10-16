@@ -62,18 +62,10 @@ export default function GetInTouch() {
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               Get in Touch
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               Ready to transform your business? Let&apos;s discuss how our comprehensive solutions 
               can help you achieve your goals. We&apos;re here to help you succeed.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button>
-              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-[#1acb97] transition-all duration-300">
-                View Our Work
-              </button>
-            </div>
           </div>
         </div>
       </section>

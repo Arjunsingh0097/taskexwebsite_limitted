@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 
@@ -43,13 +44,10 @@ export default function BusinessStrategy() {
               Strategic consulting services that transform your business vision into 
               actionable growth plans and measurable results
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button>
-              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-[#1acb97] transition-all duration-300">
+            <div className="flex justify-center">
+              <Link href="/get-in-touch" className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
                 Get in Touch
-              </button>
+              </Link>
             </div>
           </div>
         </div>

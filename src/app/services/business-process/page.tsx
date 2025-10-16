@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import SupportSection from "@/components/SupportSection";
 
@@ -69,14 +70,11 @@ export default function BusinessProcess() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex justify-center"
           >
-            <button className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
-              Schedule a Call
-            </button>
-            <button className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
+            <Link href="/get-in-touch" className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
               Get in Touch
-            </button>
+            </Link>
           </motion.div>
         </div>
 

@@ -51,24 +51,10 @@ export default function AboutSection() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
+            className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto"
           >
             Your Complete Business Solutions Partner • Trusted Worldwide • Driving Innovation
           </motion.p>
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link href="/get-in-touch" className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
-              Get in Touch
-            </Link>
-            <Link href="/services" className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
-              Our Services
-            </Link>
-          </motion.div>
         </div>
 
         {/* Parallax Floating Blur */}
