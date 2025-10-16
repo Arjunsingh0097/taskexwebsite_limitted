@@ -31,10 +31,11 @@ export const metadata: Metadata = {
     description: "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing. Trusted worldwide for driving innovation and growth.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://taskex.com/images/og-image-1200x630.png",
         width: 1200,
         height: 630,
         alt: "Taskex Logo - Complete Business Solutions Partner",
+        type: "image/png",
       },
     ],
   },
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     creator: "@taskex",
     title: "Taskex - Complete Business Solutions Partner",
     description: "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing.",
-    images: ["/og-image.png"],
+    images: ["https://taskex.com/images/og-image-1200x630.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -55,6 +56,11 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#1acb97",
     "msapplication-config": "/browserconfig.xml",
+    // Additional meta tags for better social media compatibility
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/png",
+    "og:image:secure_url": "https://taskex.com/images/og-image-1200x630.png",
   },
 };
 
