@@ -12,6 +12,10 @@ export default function TechnologyDataConsulting() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   return (
     <main className="bg-white text-gray-900">
@@ -24,8 +28,8 @@ export default function TechnologyDataConsulting() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80"
-            alt="Technology Consulting Background"
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80"
+            alt="End-to-End Outsourcing Services Background"
             fill
             className="object-cover"
             unoptimized
@@ -40,16 +44,25 @@ export default function TechnologyDataConsulting() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
           >
-            Technology & Data Consulting Solutions
+            End-to-End Outsourcing Services
           </motion.h1>
           <motion.p
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            className="text-xl sm:text-2xl text-white/90 mb-10 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-white/90 mb-4 max-w-4xl mx-auto"
           >
-            Strategic technology consulting to accelerate your digital transformation and unlock your data&apos;s full potential
+            Your Business. Fully Supported. Seamlessly Managed.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
+            className="text-lg text-white/80 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            Building and running an organization takes more than a great idea — it requires reliable operations, compliant frameworks, and efficient management. Our End-to-End Outsourcing Services are designed to help businesses focus on what they do best while we take care of everything else.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -59,10 +72,10 @@ export default function TechnologyDataConsulting() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <button className="bg-white text-[#1acb97] font-semibold py-4 px-10 rounded-xl hover:scale-105 transition-all duration-500">
-              Schedule a Call
+              Start Your Journey
             </button>
             <button className="border-2 border-white text-white font-semibold py-4 px-10 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
-              Get in Touch
+              Get Consultation
             </button>
           </motion.div>
         </div>
@@ -75,382 +88,238 @@ export default function TechnologyDataConsulting() {
         />
       </section>
 
-      {/* Services Overview Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Consulting Services
+      {/* INTRODUCTION SECTION */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Complete Operational Support
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive technology and data consulting services designed to 
-              transform your business operations and drive innovation
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              From setting up your legal and compliance structure to managing hiring, payroll, HR operations, and workplace infrastructure, we act as your extended operations partner. Whether you&apos;re a growing startup, a scaling enterprise, or a global company entering a new market, we provide a ready ecosystem for smooth, compliant, and cost-efficient operations.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Digital Strategy */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                  Comprehensive Coverage
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  From legal compliance to HR operations, we handle every aspect of your business infrastructure so you can focus on growth.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Digital Strategy
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Digital transformation roadmap
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Technology assessment & audit
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Innovation strategy development
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Change management planning
-                </li>
-              </ul>
-            </div>
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                  Scalable Solutions
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our services adapt to your business stage — whether you&apos;re a startup, scaling enterprise, or entering new markets.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                  Single-Window Management
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  One trusted partner managing all operational functions with transparent governance and service-level accountability.
+                </p>
+              </div>
+            </motion.div>
 
-            {/* Data Architecture */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                  />
-                </svg>
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80"
+                  alt="End-to-End Outsourcing Services"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Data Architecture
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Enterprise data modeling
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Data governance framework
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Master data management
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Data quality & lineage
-                </li>
-              </ul>
-            </div>
-
-            {/* Cloud Solutions */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Cloud Solutions
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Cloud migration strategy
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Multi-cloud architecture
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Infrastructure optimization
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Cost optimization & governance
-                </li>
-              </ul>
-            </div>
-
-            {/* Enterprise Integration */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Enterprise Integration
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  API strategy & management
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Legacy system modernization
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Microservices architecture
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Real-time data integration
-                </li>
-              </ul>
-            </div>
-
-            {/* Security & Compliance */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Security & Compliance
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Cybersecurity assessment
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Compliance framework design
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Risk management strategy
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Privacy & data protection
-                </li>
-              </ul>
-            </div>
-
-            {/* Performance Optimization */}
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Performance Optimization
-              </h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  System performance analysis
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Database optimization
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Application tuning
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1acb97] mr-2">•</span>
-                  Scalability planning
-                </li>
-              </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our Consulting Services?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Partner with experts who understand both technology and business strategy
-            </p>
-          </div>
+      {/* CAPABILITIES SECTION */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Our Capabilities
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Comprehensive outsourcing solutions designed to support your entire business ecosystem
+          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+          {[
+            {
+              title: "Legal & Compliance Management",
+              description: "Establish and manage your organization within a robust legal and regulatory framework — ensuring full compliance with local laws, policies, and industry standards.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              ),
+            },
+            {
+              title: "Talent Acquisition & Hiring Support",
+              description: "Access recruitment expertise to attract, assess, and onboard the right talent aligned with your business goals and culture.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              ),
+            },
+            {
+              title: "Payroll & HR Operations",
+              description: "Streamline employee lifecycle management, from payroll processing and benefits administration to HR policies and employee engagement.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              ),
+            },
+            {
+              title: "HR Business Partnering (HRBP)",
+              description: "Strategic HR support to align people strategy with business objectives — driving productivity, retention, and organizational health.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              ),
+            },
+            {
+              title: "Infrastructure Management",
+              description: "End-to-end support for office space setup, facilities management, and IT infrastructure — from hardware and networking to secure digital environments.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              ),
+            },
+            {
+              title: "Single-Window Operations Management",
+              description: "A unified service model that ensures seamless coordination across all operational functions, backed by transparent governance and service-level accountability.",
+              icon: (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              ),
+            },
+          ].map((capability, i) => (
+            <motion.div
+              key={i}
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i * 0.2}
+              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-200"
+            >
+              <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {capability.icon}
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Expertise</h3>
-              <p className="text-gray-600">15+ years of experience in enterprise technology consulting</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Implementation</h3>
-              <p className="text-gray-600">Rapid deployment with minimal business disruption</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#1acb97] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Cost-Effective</h3>
-              <p className="text-gray-600">Optimized solutions that deliver maximum ROI</p>
-            </div>
-          </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {capability.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {capability.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Badge */}
-          <div className="text-center mb-6">
-            <span className="inline-block bg-emerald-100 text-emerald-700 text-sm font-semibold px-4 py-2 rounded-full uppercase tracking-wide">
-              Why Choose Our Consulting Services
-            </span>
-          </div>
+      {/* WHY CHOOSE US SECTION */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Why Choose Us
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            We deliver exceptional outsourcing results through proven expertise and comprehensive support
+          </p>
+        </motion.div>
 
-          {/* Main Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-              Expert Technology & Data
-              <br />
-              Consulting Solutions
-            </h2>
-          </div>
-
-          {/* Feature Cards Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Digital Transformation Strategy",
-                desc: "Comprehensive digital transformation roadmaps, technology assessments, and innovation strategies to modernize your business operations.",
+                title: "One Partner, Complete Support",
+                description: "Simplify operations with a single, trusted outsourcing partner",
                 icon: (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                   />
                 ),
               },
               {
-                title: "Data Architecture Design",
-                desc: "Enterprise data modeling, governance frameworks, master data management, and data quality solutions for robust data foundations.",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                  />
-                ),
-              },
-              {
-                title: "Cloud Migration & Solutions",
-                desc: "Multi-cloud architecture design, migration strategies, infrastructure optimization, and cost governance for scalable cloud solutions.",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                ),
-              },
-              {
-                title: "Enterprise Integration",
-                desc: "API strategy development, legacy system modernization, microservices architecture, and real-time data integration solutions.",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                  />
-                ),
-              },
-              {
-                title: "Security & Compliance",
-                desc: "Cybersecurity assessments, compliance framework design, risk management strategies, and privacy protection solutions.",
+                title: "Compliance Confidence",
+                description: "Navigate legal and regulatory complexities with ease",
                 icon: (
                   <path
                     strokeLinecap="round"
@@ -461,8 +330,8 @@ export default function TechnologyDataConsulting() {
                 ),
               },
               {
-                title: "Performance Optimization",
-                desc: "System performance analysis, database optimization, application tuning, and scalability planning for enhanced efficiency.",
+                title: "Scalable & Flexible",
+                description: "Tailored models that adapt as your business grows",
                 icon: (
                   <path
                     strokeLinecap="round"
@@ -472,28 +341,57 @@ export default function TechnologyDataConsulting() {
                   />
                 ),
               },
-            ].map((card, index) => (
-              <div
-                key={index}
-                className="bg-gray-800 border border-gray-700 rounded-2xl p-8 h-full flex flex-col hover:shadow-lg hover:border-emerald-400 hover:bg-gray-750 transition-all duration-300 shadow-sm"
+              {
+                title: "Cost & Efficiency Advantage",
+                description: "Reduce overhead while maintaining operational excellence",
+                icon: (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
+                ),
+              },
+              {
+                title: "Focus on Core Business",
+                description: "We handle the backend so you can focus on growth and innovation",
+                icon: (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                ),
+              },
+            ].map((benefit, i) => (
+              <motion.div
+                key={i}
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i * 0.2}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="w-12 h-12 bg-gradient-to-tr from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-[#1acb97] rounded-xl flex items-center justify-center mb-6">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-8 h-8 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    {card.icon}
+                    {benefit.icon}
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {card.title}
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {benefit.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed flex-grow">
-                  {card.desc}
+                <p className="text-gray-600 leading-relaxed">
+                  {benefit.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -502,26 +400,53 @@ export default function TechnologyDataConsulting() {
       {/* Support Section */}
       <SupportSection />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#1acb97]">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Technology?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let&apos;s discuss how our consulting services can accelerate your digital transformation
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#1acb97] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              Get Free Consultation
+      {/* CTA SECTION */}
+      <section className="relative bg-[#1acb97] py-24 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 50% 50%, #ffffff20, transparent 70%)",
+          }}
+        />
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+          >
+            Enabling Businesses to Scale Without Boundaries
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.2}
+            className="text-xl text-white/90 mb-8"
+          >
+            Our End-to-End Outsourcing Services vertical empowers organizations to operate seamlessly and scale confidently. With our integrated approach, you gain a ready operational backbone — enabling faster setup, stronger compliance, and smoother growth from day one.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.4}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <button className="bg-white text-[#1acb97] font-semibold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-500">
+              Start Your Journey
             </button>
-            <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-[#1acb97] transition-all duration-300">
-              View Case Studies
+            <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white hover:text-[#1acb97] transition-all duration-500">
+              Get Consultation
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* Footer */}
       <Footer />
     </main>
   );
