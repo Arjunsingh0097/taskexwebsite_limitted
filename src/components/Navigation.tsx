@@ -76,7 +76,7 @@ export default function Navigation() {
                           Data Analytics & Insights
                         </Link>
                         <Link
-                          href="/services/technology-data-consulting"
+                          href="/services/end-to-end-outsourcing-services"
                           className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150"
                           onClick={() => setIsServicesOpen(false)}
                         >
@@ -160,7 +160,7 @@ export default function Navigation() {
                     Data Analytics & Insights
                   </Link>
                   <Link
-                    href="/services/technology-data-consulting"
+                    href="/services/end-to-end-outsourcing-services"
                     className="text-gray-700 hover:text-[#1acb97] block py-2 text-sm font-medium transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
