@@ -7,6 +7,7 @@ import DynamicServicesSection from "@/components/DynamicServicesSection";
 import Footer from "@/components/Footer";
 import ReviewSummary from "@/components/ReviewSummary";
 import NativeTeamsSection from "@/components/NativeTeamsSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <DynamicServicesSection />
+      <WhyChooseUsSection />
       <TestimonialsSection />
       <PartnerSection />
       <NativeTeamsSection />
