@@ -191,7 +191,7 @@ export default function GetInTouch() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors placeholder-gray-500 placeholder-opacity-70"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -207,7 +207,7 @@ export default function GetInTouch() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors placeholder-gray-500 placeholder-opacity-70"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -223,7 +223,7 @@ export default function GetInTouch() {
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors placeholder-gray-500 placeholder-opacity-70"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -238,7 +238,7 @@ export default function GetInTouch() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1acb97] focus:border-transparent transition-colors resize-none placeholder-gray-500 placeholder-opacity-70"
                       placeholder="Tell us about your project or requirements..."
                     />
                   </div>
