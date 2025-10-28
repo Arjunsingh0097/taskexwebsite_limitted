@@ -15,8 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Taskex - Complete Business Solutions Partner",
-  description: "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing. Trusted worldwide for driving innovation and growth.",
-  keywords: "business solutions, software development, data analytics, digital marketing, outsourcing, business process, technology consulting",
+  description:
+    "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing. Trusted worldwide for driving innovation and growth.",
+  keywords:
+    "business solutions, software development, data analytics, digital marketing, outsourcing, business process, technology consulting",
   authors: [{ name: "Taskex" }],
   creator: "Taskex",
   publisher: "Taskex",
@@ -28,7 +30,8 @@ export const metadata: Metadata = {
     url: "https://taskex.com",
     siteName: "Taskex",
     title: "Taskex - Complete Business Solutions Partner",
-    description: "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing. Trusted worldwide for driving innovation and growth.",
+    description:
+      "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing. Trusted worldwide for driving innovation and growth.",
     images: [
       {
         url: "https://taskex.com/images/og-image-1200x630.png",
@@ -44,19 +47,33 @@ export const metadata: Metadata = {
     site: "@taskex",
     creator: "@taskex",
     title: "Taskex - Complete Business Solutions Partner",
-    description: "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing.",
+    description:
+      "Taskex provides comprehensive business solutions including software development, data analytics, digital marketing, business process services, and end-to-end outsourcing.",
     images: ["https://taskex.com/images/og-image-1200x630.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/images/taskeximage-removebg-preview.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
+      { url: "/images/taskeximage-removebg-preview.png" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#1acb97",
+      },
+    ],
   },
   manifest: "/manifest.json",
   other: {
     "msapplication-TileColor": "#1acb97",
     "msapplication-config": "/browserconfig.xml",
-    // Additional meta tags for better social media compatibility
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:type": "image/png",
@@ -77,6 +94,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Additional manual fallbacks (optional) */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
