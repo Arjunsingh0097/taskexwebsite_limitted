@@ -276,38 +276,8 @@ export default function AboutSection() {
       {/* Stats Row */}
       <StatsRow />
 
-      {/* Video Frame Section */}
-      <div className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Video Frame Container */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            {/* Video Element */}
-            <video
-              className="w-full h-full object-cover rounded-3xl"
-              controls
-              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23f3f4f6'/%3E%3C/svg%3E"
-            >
-              <source src="/videos/office-support-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 shadow-lg">
-                <svg
-                  className="w-8 h-8 text-gray-800 ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M8 5v10l7-5-7-5z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mission, Vision, and Promise Section */}
-        <div className="mt-20 bg-gray-900 py-20">
+      {/* Mission, Vision, and Promise Section */}
+      <div className="py-20 bg-gray-900">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Section Title */}
             <div className="text-center mb-16">
@@ -453,7 +423,6 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-      </div>
 
       {/* Why We're Different Section */}
       <div className="py-20 bg-gray-50">
