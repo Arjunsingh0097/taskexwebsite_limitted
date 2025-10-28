@@ -38,9 +38,9 @@ export default function Navigation() {
               <Image
                 src="/images/taskeximage-removebg-preview.png"
                 alt="Taskex Logo"
-                width={200}
-                height={60}
-                className="h-8 sm:h-10 lg:h-12 w-auto"
+                width={300}
+                height={300}
+                className="rounded-lg w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-52 lg:h-52 xl:w-56 xl:h-56"
               />
             </div>
           </div>
