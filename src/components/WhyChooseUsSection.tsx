@@ -35,9 +35,7 @@ export default function WhyChooseUsSection() {
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-start">
           {/* Left Column - Image (taller on mobile, head visible) */}
           <div className="relative flex justify-center order-2 lg:order-1">
-            <div
-              className="relative w-screen -mx-4 h-[90vh] sm:mx-0 sm:w-full sm:h-auto rounded-none shadow-none sm:rounded-2xl sm:overflow-hidden sm:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]"
-            >
+            <div className="relative w-screen -mx-4 h-[90vh] sm:mx-0 sm:w-full sm:max-w-[800px] sm:h-[600px] lg:h-[650px] rounded-none shadow-none sm:rounded-2xl sm:overflow-hidden sm:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
               <Image
                 src="/images/beautifulimage.jpg"
                 alt="Taskex Team Collaboration"
