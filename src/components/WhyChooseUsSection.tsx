@@ -1,114 +1,75 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function WhyChooseUsSection() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0, scale: 0.98 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  };
-
-  const slideInRight = {
-    hidden: { opacity: 0, x: 60 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  };
-
-  const slideInLeft = {
-    hidden: { opacity: 0, x: -60 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  };
-
   return (
-    <section className="relative py-28 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 overflow-hidden">
       {/* Background gradient blobs */}
       <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-emerald-200/30 rounded-full blur-[140px]" />
       <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-teal-200/40 rounded-full blur-[140px]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10 mt-8 sm:mt-0">
         {/* Header Section */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <span className="inline-block bg-[#1acb97]/10 text-[#1acb97] text-sm font-semibold px-5 py-2 rounded-full uppercase tracking-wide mb-4">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-20">
+          <span className="inline-block bg-[#1acb97]/10 text-[#1acb97] text-xs sm:text-sm font-semibold px-4 py-1.5 sm:px-5 sm:py-2 rounded-full uppercase tracking-wide mb-3 sm:mb-4">
             Why Choose Taskex
           </span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-            We Don’t Just Deliver —{" "}
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight px-2 sm:px-0">
+            We Don&apos;t Just Deliver —{" "}
             <span className="bg-gradient-to-r from-[#1acb97] to-emerald-600 bg-clip-text text-transparent">
               We Transform.
             </span>
           </h2>
 
-          <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             Choosing Taskex means choosing precision, security, and long-term
             reliability. We bring expertise and innovation to every project we
             touch.
           </p>
-        </motion.div>
+        </div>
 
         {/* Main Grid — Symmetric Layout */}
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-start">
           {/* Left Column - Image */}
-          <motion.div
-            variants={slideInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="relative flex justify-center"
-          >
-            <div className="relative w-full max-w-[800px] rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
+          <div className="relative flex justify-center order-2 lg:order-1">
+            <div className="relative w-full max-w-[800px] rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
               <Image
                 src="/images/beautifulimage.jpg"
                 alt="Taskex Team Collaboration"
                 width={800}
                 height={450}
-                className="object-cover w-full h-[750px] md:h-[800px] lg:h-[850px]"
+                className="object-cover w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
               {/* Floating Stats */}
-              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg">
-                <p className="text-3xl font-bold text-[#1acb97] mb-1">500+</p>
-                <p className="text-sm font-medium text-gray-700">
+              <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-lg">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1acb97] mb-0.5 sm:mb-1">500+</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-700">
                   Projects Delivered
                 </p>
               </div>
 
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg">
-                <p className="text-3xl font-bold text-[#1acb97] mb-1">99%</p>
-                <p className="text-sm font-medium text-gray-700">
+              <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-lg">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1acb97] mb-0.5 sm:mb-1">99%</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-700">
                   Client Satisfaction
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column - Content */}
-          <motion.div
-            variants={slideInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="space-y-10 pt-8"
-          >
-            <h3 className="text-3xl font-bold text-gray-900 mb-8">
+          <div className="space-y-4 sm:space-y-6 lg:space-y-10 pt-0 lg:pt-8 order-1 lg:order-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
               Why Clients Love Working with Us
             </h3>
 
-            <div className="space-y-8">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               {[
                 {
                   title: "Speed + Quality",
@@ -135,18 +96,13 @@ export default function WhyChooseUsSection() {
                   desc: "AI, ML, and cloud-native frameworks power your projects with performance and scalability.",
                 },
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-4 group"
+                  className="flex items-start space-x-3 sm:space-x-4"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1acb97] to-emerald-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-xl transition duration-300">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#1acb97] to-emerald-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={2.5}
@@ -156,41 +112,35 @@ export default function WhyChooseUsSection() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-[#1acb97] transition-colors duration-300">
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                       {item.title}
                     </h4>
-                    <p className="text-gray-600">{item.desc}</p>
+                    <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* CTA */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="pt-10"
-            >
-              <div className="bg-gradient-to-r from-[#1acb97] to-emerald-600 rounded-3xl p-10 text-white shadow-xl text-center">
-                <h4 className="text-2xl font-bold mb-4">
+            <div className="pt-4 sm:pt-6 lg:pt-10">
+              <div className="bg-gradient-to-r from-[#1acb97] to-emerald-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-10 text-white shadow-xl text-center">
+                <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 lg:mb-4">
                   Experience the Taskex Advantage
                 </h4>
-                <p className="text-white/90 mb-8 max-w-xl mx-auto">
+                <p className="text-xs sm:text-sm md:text-base text-white/90 mb-4 sm:mb-6 lg:mb-8 max-w-xl mx-auto">
                   Join 500+ businesses that scale faster and smarter with our
                   expert-driven development and 24/7 global support.
                 </p>
                 <div className="flex justify-center">
                   <Link href="/get-in-touch">
-                    <button className="bg-white text-[#1acb97] font-semibold py-3 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    <button className="bg-white text-[#1acb97] font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg sm:rounded-xl text-sm sm:text-base">
                       Start Your Project
                     </button>
                   </Link>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
