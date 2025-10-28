@@ -45,8 +45,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* ↑ Added pt-32 for space below nav */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 sm:pt-8">
+        {/* Added pt-20 on mobile for space below nav */}
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200 bg-clip-text text-transparent drop-shadow-lg mb-6 leading-tight">
