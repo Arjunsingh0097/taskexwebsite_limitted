@@ -41,7 +41,7 @@ export default function WhyChooseUsSection() {
                 alt="Taskex Team Collaboration"
                 width={800}
                 height={450}
-                className="object-cover w-full h-[400px] sm:h-[450px] md:h-[550px] lg:h-[600px] xl:h-[650px]"
+                className="object-cover w-full aspect-[4/3] sm:aspect-[5/3] lg:aspect-[16/9]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -124,7 +124,7 @@ export default function WhyChooseUsSection() {
             {/* CTA */}
             <div className="pt-2 sm:pt-4 lg:pt-10">
               <div className="bg-gradient-to-r from-[#1acb97] to-emerald-600 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-5 lg:p-10 text-white shadow-xl text-center">
-                <h4 className="text-base sm:text-lg md:text-2xl font-bold mb-1 sm:mb-2 lg:mb-4">
+                <h4 className="text-base sm:text-lg md:text-2xl font-bold mb-1 sm:mb-2 lg:mb-4"></h4>
                   Experience the Taskex Advantage
                 </h4>
                 <p className="text-xs sm:text-sm md:text-base text-white/90 mb-2 sm:mb-4 lg:mb-8 max-w-xl mx-auto">
