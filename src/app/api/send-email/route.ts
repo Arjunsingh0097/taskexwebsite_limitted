@@ -73,8 +73,18 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Error sending email:', error);
+    
+    // Get detailed error message
+    let errorMessage = 'Failed to send email';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { 
+        error: errorMessage,
+        details: process.env.NODE_ENV === 'development' ? error : undefined
+      },
       { status: 500 }
     );
   }

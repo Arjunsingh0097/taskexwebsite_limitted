@@ -48,12 +48,13 @@ export default function GetInTouch() {
           });
         }, 3000);
       } else {
-        console.error('Failed to send email');
-        alert('Failed to send message. Please try again.');
+        const errorData = await response.json();
+        console.error('Failed to send email:', errorData);
+        alert(`Failed to send message: ${errorData.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Failed to send message. Please try again.');
+      alert('Failed to send message. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
