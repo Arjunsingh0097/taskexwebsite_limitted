@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     images: ["https://taskex.com/images/og-image-1200x630.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/images/taskeximage-removebg-preview.png",
+    shortcut: "/images/taskeximage-removebg-preview.png",
     apple: "/images/taskeximage-removebg-preview.png",
   },
   manifest: "/manifest.json",
