@@ -13,19 +13,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter using Gmail account
+    // Create transporter with better error handling
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_USER || 'taskextaskex@gmail.com',
-        pass: process.env.GMAIL_PASS || 'liaunfdxblvejdzv', // App password (no spaces)
+        user: 'taskextaskex@gmail.com',
+        pass: 'liaunfdxblvejdzv',
       },
     });
 
+    // Verify transporter configuration
+    await transporter.verify();
+
     // Email content
     const mailOptions = {
-      from: process.env.GMAIL_USER || 'taskextaskex@gmail.com',
-      to: process.env.RECIPIENT_EMAIL || 'Jay.malhan@Taskex.in',
+      from: 'taskextaskex@gmail.com',
+      to: 'Jay.malhan@Taskex.in',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -83,7 +86,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         error: errorMessage,
-        details: process.env.NODE_ENV === 'development' ? error : undefined
+        details: process.env.NODE_ENV === 'development' ? String(error) : undefined
       },
       { status: 500 }
     );
