@@ -13,18 +13,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter using dummy Gmail account
+    // Create transporter using Gmail account
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_USER || 'dummy.taskex@gmail.com', // Dummy Gmail account
-        pass: process.env.GMAIL_PASS || 'dummy_password_123', // Dummy password
+        user: process.env.GMAIL_USER || 'taskextaskex@gmail.com',
+        pass: process.env.GMAIL_PASS || 'liau nfdx blve jdzv', // App password
       },
     });
 
     // Email content
     const mailOptions = {
-      from: process.env.GMAIL_USER || 'dummy.taskex@gmail.com',
+      from: process.env.GMAIL_USER || 'taskextaskex@gmail.com',
       to: process.env.RECIPIENT_EMAIL || 'Jay.malhan@Taskex.in',
       subject: `New Contact Form Submission from ${name}`,
       html: `
