@@ -198,7 +198,7 @@ export default function Navigation() {
                     About
                   </Link>
               <div className="pt-4 pb-3 border-t border-gray-200">
-                <Link href="/get-in-touch" className="bg-[#1acb97] text-white hover:bg-emerald-600 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-200 shadow-sm">
+                <Link href="/get-in-touch" onClick={() => setIsMenuOpen(false)} className="bg-[#1acb97] text-white hover:bg-emerald-600 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-200 shadow-sm">
                   Get in touch
                 </Link>
               </div>
