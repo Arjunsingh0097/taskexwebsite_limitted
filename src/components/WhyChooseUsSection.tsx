@@ -18,7 +18,7 @@ export default function WhyChooseUsSection() {
           </span>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight px-2 sm:px-0">
-            We Don&apos;t Just Deliver —{" "}
+            We Don&apos;t Just Deliver — {" "}
             <span className="bg-gradient-to-r from-[#1acb97] to-emerald-600 bg-clip-text text-transparent">
               We Transform.
             </span>
@@ -33,18 +33,20 @@ export default function WhyChooseUsSection() {
 
         {/* Main Grid — Symmetric Layout */}
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-start">
-          {/* Left Column - Image */}
+          {/* Left Column - Image (taller on mobile, head visible) */}
           <div className="relative flex justify-center order-2 lg:order-1">
-            <div className="relative w-full max-w-[800px] rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
+            <div
+              className="relative w-screen -mx-4 h-[90vh] sm:mx-0 sm:w-full sm:h-auto rounded-none shadow-none sm:rounded-2xl sm:overflow-hidden sm:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]"
+            >
               <Image
                 src="/images/beautifulimage.jpg"
                 alt="Taskex Team Collaboration"
-                width={800}
-                height={450}
-                className="object-cover w-full aspect-[4/3] sm:aspect-[5/3] lg:aspect-[16/9]"
+                fill
                 priority
+                className="object-cover object-top"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent sm:rounded-2xl" />
 
               {/* Floating Stats */}
               <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-lg">
@@ -71,50 +73,21 @@ export default function WhyChooseUsSection() {
 
             <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               {[
-                {
-                  title: "Speed + Quality",
-                  desc: "Delivering 40% faster than industry average while maintaining pixel-perfect quality and testing at every step.",
-                },
-                {
-                  title: "Unmatched Security",
-                  desc: "Military-grade encryption and compliance with SOC 2 and ISO 27001 ensure your data is always protected.",
-                },
-                {
-                  title: "Expert-Only Teams",
-                  desc: "Every project is handled by seasoned professionals — no interns or untested juniors on mission-critical tasks.",
-                },
-                {
-                  title: "Transparent Pricing",
-                  desc: "Flat-rate packages, zero hidden costs, and complete transparency in every billing cycle.",
-                },
-                {
-                  title: "24/7 Human Support",
-                  desc: "You’ll always talk to a dedicated expert, not a bot — ensuring fast solutions and real accountability.",
-                },
-                {
-                  title: "Next-Gen Technology",
-                  desc: "AI, ML, and cloud-native frameworks power your projects with performance and scalability.",
-                },
+                { title: "Speed + Quality", desc: "Delivering 40% faster than industry average while maintaining pixel-perfect quality and testing at every step." },
+                { title: "Unmatched Security", desc: "Military-grade encryption and compliance with SOC 2 and ISO 27001 ensure your data is always protected." },
+                { title: "Expert-Only Teams", desc: "Every project is handled by seasoned professionals — no interns or untested juniors on mission-critical tasks." },
+                { title: "Transparent Pricing", desc: "Flat-rate packages, zero hidden costs, and complete transparency in every billing cycle." },
+                { title: "24/7 Human Support", desc: "You’ll always talk to a dedicated expert, not a bot — ensuring fast solutions and real accountability." },
+                { title: "Next-Gen Technology", desc: "AI, ML, and cloud-native frameworks power your projects with performance and scalability." },
               ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start space-x-3 sm:space-x-4"
-                >
+                <div key={i} className="flex items-start space-x-3 sm:space-x-4">
                   <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#1acb97] to-emerald-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md">
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                      viewBox="0 0 24 24"
-                    >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
-                      {item.title}
-                    </h4>
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
                     <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
                   </div>
                 </div>
