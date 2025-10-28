@@ -41,7 +41,7 @@ export default function WhyChooseUsSection() {
                 alt="Taskex Team Collaboration"
                 width={800}
                 height={450}
-                className="object-cover w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px]"
+                className="object-cover w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[600px] xl:h-[650px]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
