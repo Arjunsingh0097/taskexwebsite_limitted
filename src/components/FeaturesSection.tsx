@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 /**
  * Safari‑friendly, mobile‑safe FeaturesSection
@@ -135,8 +135,7 @@ export default function FeaturesSection() {
       // Use dynamic viewport height units compatible with Safari (fallback to innerHeight)
       vh = Math.max(
         window.innerHeight,
-        // @ts-ignore experimental
-        (window as any).visualViewport?.height || 0
+        (window as Window & { visualViewport?: { height: number } }).visualViewport?.height || 0
       );
     };
 
@@ -224,10 +223,14 @@ export default function FeaturesSection() {
       <div
         ref={stickyRef}
         className={`${isMobile ? "" : "sticky top-0"} ${isMobile ? "h-auto" : "h-[100svh] md:h-[100dvh]"} flex flex-col justify-center`}
-        style={{
-          // Prevent ancestor transforms/overflow bugs with sticky; help Safari
-          contain: isMobile ? undefined : ("layout paint" as any),
-        }}
+        style={
+          isMobile
+            ? undefined
+            : ({
+                // Prevent ancestor transforms/overflow bugs with sticky; help Safari
+                contain: "layout paint",
+              } as React.CSSProperties)
+        }
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Badge */}
