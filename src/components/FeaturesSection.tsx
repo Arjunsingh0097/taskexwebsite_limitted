@@ -3,23 +3,34 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 /**
- * Mobile-safe version
- * - Mobile (<768px): no sticky container; cards fade/slide in via IntersectionObserver (no overlap)
- * - Desktop (>=768px): sticky parallax section with smooth progress-based motion
- * - Removes scale on mobile and clamps translations to prevent collisions
+ * Safari‑friendly, mobile‑safe FeaturesSection
+ * - Mobile (<768px): IntersectionObserver fade/slide reveal (no overlap)
+ * - Desktop (>=768px): sticky parallax using rAF + translate3d + 100dvh/svh units
+ * - Adds will-change hints, clamps translations, and avoids per‑scroll getBoundingClientRect
+ * - Respects prefers-reduced-motion
  */
 export default function FeaturesSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
-  // Track viewport width safely (no window during SSR)
+  // Track viewport width + reduced motion safely
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
+    const rm = window.matchMedia("(prefers-reduced-motion: reduce)");
     const apply = () => setIsMobile(mq.matches);
+    const applyRM = () => setReducedMotion(rm.matches);
     apply();
+    applyRM();
     mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
+    rm.addEventListener("change", applyRM);
+    return () => {
+      mq.removeEventListener("change", apply);
+      rm.removeEventListener("change", applyRM);
+    };
   }, []);
 
   const features = useMemo(
@@ -106,26 +117,60 @@ export default function FeaturesSection() {
     []
   );
 
-  // ===== Desktop parallax (md+) =====
+  // ===== Desktop parallax (md+) with rAF and precomputed metrics =====
   useEffect(() => {
     if (isMobile) return; // desktop only
     const el = sectionRef.current;
     if (!el) return;
 
-    const onScroll = () => {
+    let sectionTop = 0;
+    let sectionHeight = 0;
+    let vh = 0;
+
+    const computeMetrics = () => {
+      // Avoid getBoundingClientRect on scroll; only on resize/initial
       const rect = el.getBoundingClientRect();
-      const wh = window.innerHeight;
-      const total = rect.height + wh; // range across entry + exit
-      const progressed = Math.min(1, Math.max(0, (wh - rect.top) / total));
-      setScrollProgress(progressed);
+      sectionTop = rect.top + window.scrollY; // absolute top in document
+      sectionHeight = el.offsetHeight; // includes padding
+      // Use dynamic viewport height units compatible with Safari (fallback to innerHeight)
+      vh = Math.max(
+        window.innerHeight,
+        // @ts-ignore experimental
+        (window as any).visualViewport?.height || 0
+      );
+    };
+
+    computeMetrics();
+
+    let ticking = false;
+    let lastProgress = 0;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const total = sectionHeight + vh; // range across entry + exit
+        const progressed = Math.min(1, Math.max(0, (y - (sectionTop - vh)) / total));
+        // Only update if change is significant (reduces jitter in Safari)
+        if (Math.abs(progressed - lastProgress) > 0.001) {
+          setScrollProgress(progressed);
+          lastProgress = progressed;
+        }
+        ticking = false;
+      });
+    };
+
+    const onResize = () => {
+      computeMetrics();
+      onScroll();
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onResize, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
     };
   }, [isMobile]);
 
@@ -135,56 +180,66 @@ export default function FeaturesSection() {
 
   useEffect(() => {
     if (!isMobile) return;
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           const i = Number((e.target as HTMLElement).dataset.index);
           if (!Number.isNaN(i) && e.isIntersecting) {
             setVisible((prev) => {
+              if (prev[i]) return prev; // don't thrash state
               const next = [...prev];
               next[i] = true;
               return next;
             });
+            // Unobserve once visible to reduce work on Safari
+            io.unobserve(e.target);
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.15 }
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.15 }
     );
 
     cardsRef.current.forEach((node) => node && io.observe(node));
     return () => io.disconnect();
-  }, [isMobile, features.length]);
+  }, [isMobile, features]);
 
-  // Animation values (desktop only)
+  // Animation values (desktop only). Extra clamps + translate3d for Safari GPU compositing
   const speed = 4;
   const tDist = 32; // px
-  const badgeOpacity = Math.min(1, scrollProgress * speed);
-  const badgeTY = (1 - Math.min(1, scrollProgress * 2.4)) * tDist;
-  const titleOpacity = Math.min(1, Math.max(0, (scrollProgress - 0.08) * speed));
-  const titleTY = (1 - Math.min(1, (scrollProgress - 0.08) * 2)) * (tDist + 8);
-  const gridOpacity = Math.min(1, Math.max(0, (scrollProgress - 0.18) * speed));
-  const gridTY = (1 - Math.min(1, (scrollProgress - 0.18) * 1.6)) * (tDist + 4);
+  const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
+
+  const badgeOpacity = clamp01(scrollProgress * speed);
+  const badgeTY = (1 - clamp01(scrollProgress * 2.4)) * tDist;
+  const titleOpacity = clamp01((scrollProgress - 0.08) * speed);
+  const titleTY = (1 - clamp01((scrollProgress - 0.08) * 2)) * (tDist + 8);
+  const gridOpacity = clamp01((scrollProgress - 0.18) * speed);
+  const gridTY = (1 - clamp01((scrollProgress - 0.18) * 1.6)) * (tDist + 4);
 
   return (
     <section
       ref={sectionRef}
-      className={
-        // Mobile: regular flow; Desktop: tall section for parallax
-        `${isMobile ? "py-12" : "min-h-[280vh]"} bg-gradient-to-br from-gray-50 to-white`
-      }
+      className={`${isMobile ? "py-12" : "min-h-[260svh] md:min-h-[280svh]"} bg-gradient-to-br from-gray-50 to-white`}
     >
-      <div className={`${isMobile ? "" : "sticky top-0"} h-auto ${isMobile ? "" : "h-screen"} flex flex-col justify-center`}>
+      <div
+        ref={stickyRef}
+        className={`${isMobile ? "" : "sticky top-0"} ${isMobile ? "h-auto" : "h-[100svh] md:h-[100dvh]"} flex flex-col justify-center`}
+        style={{
+          // Prevent ancestor transforms/overflow bugs with sticky; help Safari
+          contain: isMobile ? undefined : ("layout paint" as any),
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Badge */}
           <div
-            className="text-center mb-4 sm:mb-6"
+            className="text-center mb-4 sm:mb-6 will-change-[opacity,transform]"
             style={
-              isMobile
+              isMobile || reducedMotion
                 ? undefined
                 : {
                     opacity: badgeOpacity,
-                    transform: `translateY(${badgeTY}px)`,
-                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
+                    transform: `translate3d(0, ${badgeTY}px, 0)`,
+                    backfaceVisibility: "hidden",
                   }
             }
           >
@@ -195,14 +250,15 @@ export default function FeaturesSection() {
 
           {/* Title */}
           <div
-            className="text-center mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-0"
+            className="text-center mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-0 will-change-[opacity,transform]"
             style={
-              isMobile
+              isMobile || reducedMotion
                 ? undefined
                 : {
                     opacity: titleOpacity,
-                    transform: `translateY(${titleTY}px)`,
-                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
+                    transform: `translate3d(0, ${titleTY}px, 0)`,
+                    backfaceVisibility: "hidden",
+                    WebkitTransform: `translate3d(0, ${titleTY}px, 0)`,
                   }
             }
           >
@@ -215,26 +271,26 @@ export default function FeaturesSection() {
 
           {/* Cards Grid */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0 will-change-[opacity,transform]"
             style={
-              isMobile
+              isMobile || reducedMotion
                 ? undefined
                 : {
                     opacity: gridOpacity,
-                    transform: `translateY(${gridTY}px)`,
-                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
+                    transform: `translate3d(0, ${gridTY}px, 0)`,
+                    backfaceVisibility: "hidden",
+                    WebkitTransform: `translate3d(0, ${gridTY}px, 0)`,
                   }
             }
           >
             {features.map((card, i) => {
-              // Desktop stagger within the grid block (subtle)
-              const d = i * 0.06;
-              const cOpacity = isMobile
-                ? visible[i] ? 1 : 0
-                : Math.min(1, Math.max(0, (scrollProgress - 0.22 - d) * 5));
-              const cTY = isMobile
-                ? visible[i] ? 0 : 18 // gentle slide in (no overlap)
-                : (1 - Math.min(1, (scrollProgress - 0.22 - d) * 2)) * 24;
+              const d = i * 0.06; // subtle stagger
+              const cOpacity = isMobile || reducedMotion
+                ? 1
+                : clamp01((scrollProgress - 0.22 - d) * 5);
+              const cTY = isMobile || reducedMotion
+                ? 0
+                : (1 - clamp01((scrollProgress - 0.22 - d) * 2)) * 24;
 
               return (
                 <div
@@ -245,11 +301,22 @@ export default function FeaturesSection() {
                   data-index={i}
                   className="bg-gray-900 border border-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col shadow-sm hover:shadow-md hover:border-emerald-400 transition-shadow"
                   style={{
-                    opacity: cOpacity,
-                    transform: `translateY(${cTY}px)`,
+                    opacity: isMobile ? (visible[i] ? 1 : 0) : cOpacity,
+                    transform: isMobile
+                      ? visible[i]
+                        ? "translate3d(0, 0, 0)"
+                        : "translate3d(0, 18px, 0)"
+                      : `translate3d(0, ${cTY}px, 0)`,
                     transition: isMobile
                       ? "opacity 400ms ease, transform 400ms ease"
-                      : "opacity 300ms ease, transform 300ms ease",
+                      : undefined,
+                    willChange: "opacity, transform",
+                    backfaceVisibility: "hidden",
+                    WebkitTransform: isMobile
+                      ? visible[i]
+                        ? "translate3d(0, 0, 0)"
+                        : "translate3d(0, 18px, 0)"
+                      : `translate3d(0, ${cTY}px, 0)`,
                   }}
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-tr from-emerald-400 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
