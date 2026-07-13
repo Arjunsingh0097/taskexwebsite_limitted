@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -61,13 +62,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Company</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">About Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Our Team</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Careers</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Partners</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Contact</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Blog</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Case Studies</a></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">About Us</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">How It Works</Link></li>
+              <li><Link href="/careers" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Careers</Link></li>
+              <li><Link href="/partner-with-us" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Partner With Us</Link></li>
+              <li><Link href="/reviews" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Reviews</Link></li>
+              <li><Link href="/blogs" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">Blog</Link></li>
+              <li><Link href="/faq" className="text-gray-600 hover:text-[#1acb97] transition-colors duration-300">FAQ</Link></li>
             </ul>
           </div>
 
@@ -109,8 +110,8 @@ export default function Footer() {
                 © 2024 Taskex. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="text-gray-600 hover:text-[#1acb97] text-sm transition-colors duration-300">Privacy Policy</a>
-                <a href="#" className="text-gray-600 hover:text-[#1acb97] text-sm transition-colors duration-300">Terms of Service</a>
+                <Link href="/privacy-policy" className="text-gray-600 hover:text-[#1acb97] text-sm transition-colors duration-300">Privacy Policy</Link>
+                <Link href="/terms-of-service" className="text-gray-600 hover:text-[#1acb97] text-sm transition-colors duration-300">Terms of Service</Link>
                 <a href="#" className="text-gray-600 hover:text-[#1acb97] text-sm transition-colors duration-300">Cookie Policy</a>
               </div>
             </div>

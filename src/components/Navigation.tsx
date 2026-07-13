@@ -8,25 +8,30 @@ import { useState, useEffect, useRef } from 'react';
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
+      }
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setIsMoreOpen(false);
       }
     };
 
-    if (isServicesOpen) {
+    if (isServicesOpen || isMoreOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isServicesOpen]);
+  }, [isServicesOpen, isMoreOpen]);
 
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
@@ -56,7 +61,7 @@ export default function Navigation() {
               </Link>
               
               {/* Services Dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div className="relative" ref={servicesDropdownRef}>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                   className="text-gray-700 hover:text-[#1acb97] px-3 py-2 lg:px-4 lg:py-3 text-base font-medium transition-all duration-200 flex items-center"
@@ -110,11 +115,43 @@ export default function Navigation() {
               </div>
               
               <Link
+                href="/how-it-works"
+                className="text-gray-700 hover:text-[#1acb97] px-3 py-2 lg:px-4 lg:py-3 text-base font-medium transition-all duration-200"
+              >
+                How It Works
+              </Link>
+
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-[#1acb97] px-3 py-2 lg:px-4 lg:py-3 text-base font-medium transition-all duration-200"
               >
                 About
               </Link>
+
+              {/* More Dropdown */}
+              <div className="relative" ref={moreDropdownRef}>
+                <button
+                  onClick={() => setIsMoreOpen(!isMoreOpen)}
+                  className="text-gray-700 hover:text-[#1acb97] px-3 py-2 lg:px-4 lg:py-3 text-base font-medium transition-all duration-200 flex items-center"
+                >
+                  More
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isMoreOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-52 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    <Link href="/reviews" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Reviews</Link>
+                    <Link href="/faq" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>FAQ</Link>
+                    <Link href="/careers" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Careers</Link>
+                    <Link href="/partner-with-us" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Partner With Us</Link>
+                    <Link href="/blogs" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Blogs</Link>
+                    <Link href="/privacy-policy" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Privacy Policy</Link>
+                    <Link href="/terms-of-service" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1acb97] transition-all duration-150" onClick={() => setIsMoreOpen(false)}>Terms of Service</Link>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -193,11 +230,67 @@ export default function Navigation() {
               </div>
               
                   <Link
+                    href="/how-it-works"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    How It Works
+                  </Link>
+                  <Link
                     href="/about"
                     className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     About
+                  </Link>
+                  <Link
+                    href="/reviews"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Reviews
+                  </Link>
+                  <Link
+                    href="/faq"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQ
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    href="/partner-with-us"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Partner With Us
+                  </Link>
+                  <Link
+                    href="/blogs"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blogs
+                  </Link>
+                  <Link
+                    href="/privacy-policy"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
+                    href="/terms-of-service"
+                    className="text-gray-700 hover:text-[#1acb97] block px-3 py-2 text-base font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Terms of Service
                   </Link>
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <button
