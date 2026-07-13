@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function HowItWorksSection() {
   return (
     <section className="py-20 bg-gray-50 relative overflow-hidden">
@@ -37,9 +39,9 @@ export default function HowItWorksSection() {
               </p>
 
               {/* Button */}
-              <button className="bg-[#1acb97] hover:bg-emerald-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-colors duration-300 w-fit">
-                Book a demo
-              </button>
+              <Link href="/how-it-works" className="bg-[#1acb97] hover:bg-emerald-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-colors duration-300 w-fit">
+                See How It Works
+              </Link>
             </div>
 
             {/* Right Column - Image and Data Overlay */}
