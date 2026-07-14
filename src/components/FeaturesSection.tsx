@@ -302,7 +302,7 @@ export default function FeaturesSection() {
                     cardsRef.current[i] = el;
                   }}
                   data-index={i}
-                  className="bg-gray-900 border border-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col shadow-sm hover:shadow-md hover:border-emerald-400 transition-shadow"
+                  className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col shadow-sm hover:shadow-md hover:border-[#1acb97] transition-shadow"
                   style={{
                     opacity: isMobile ? (visible[i] ? 1 : 0) : cOpacity,
                     transform: isMobile
@@ -322,7 +322,7 @@ export default function FeaturesSection() {
                       : `translate3d(0, ${cTY}px, 0)`,
                   }}
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-tr from-emerald-400 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-tr from-[#1acb97] to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
                     <svg
                       className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
@@ -332,10 +332,10 @@ export default function FeaturesSection() {
                       {card.icon}
                     </svg>
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed flex-grow">
                     {card.desc}
                   </p>
                 </div>
