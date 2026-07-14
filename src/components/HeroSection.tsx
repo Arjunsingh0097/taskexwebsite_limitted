@@ -39,9 +39,9 @@ export default function HeroSection() {
       
       {/* Luxury glow overlays */}
       <div className="absolute inset-0">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-emerald-400/20 blur-[180px]"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-teal-500/20 blur-[200px]"></div>
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full bg-yellow-500/10 blur-[160px]"></div>
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-orange-400/20 blur-[180px]"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-amber-500/20 blur-[200px]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full bg-orange-500/10 blur-[160px]"></div>
       </div>
 
       {/* Content */}
@@ -49,10 +49,10 @@ export default function HeroSection() {
         {/* Added pt-20 on mobile for space below nav */}
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200 bg-clip-text text-transparent drop-shadow-lg mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white drop-shadow-lg mb-6 leading-tight">
           Your Complete Business Solutions
           <br />
-          Partner Across All Industries
+          <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">Partner Across All Industries</span>
         </h1>
 
         {/* Description */}
@@ -65,7 +65,7 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Link href="/get-in-touch" className="bg-gradient-to-r from-pink-500 to-rose-600 hover:opacity-90 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
+          <Link href="/get-in-touch" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:opacity-90 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
             Book a Demo
           </Link>
           <Link href="/get-in-touch" className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl text-lg backdrop-blur-md border border-white/30 transition-all duration-300">
@@ -75,9 +75,9 @@ export default function HeroSection() {
       </div>
 
       {/* Floating Decorative Glows */}
-      <div className="absolute top-20 left-10 w-24 h-24 bg-emerald-400/30 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-teal-400/30 rounded-full blur-2xl animate-pulse delay-200"></div>
-      <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-emerald-300/20 rounded-full blur-2xl animate-ping"></div>
+      <div className="absolute top-20 left-10 w-24 h-24 bg-orange-400/30 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-amber-400/30 rounded-full blur-2xl animate-pulse delay-200"></div>
+      <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-orange-300/20 rounded-full blur-2xl animate-ping"></div>
     </section>
   );
 }
